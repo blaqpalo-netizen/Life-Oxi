@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router'
 
-// 👇 Add this import
+// ✅ Correct import for React + Vite
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
 import Navbar from './components/Navbar'
@@ -97,7 +97,7 @@ export default function App() {
       <Footer />
       <StickyContactActions />
 
-      {/* 👇 Speed Insights - Add this at the end */}
+      {/* ✅ This is what was missing */}
       <SpeedInsights />
     </>
   )
