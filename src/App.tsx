@@ -97,8 +97,8 @@ export default function App() {
       <Footer />
       <StickyContactActions />
 
-      {/* ✅ This is what was missing */}
-      <SpeedInsights />
+      {/* ✅ Improved Speed Insights with route prop for React Router */}
+      <SpeedInsights route={location.pathname} />
     </>
   )
 }
