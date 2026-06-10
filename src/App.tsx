@@ -1,5 +1,9 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router'
+
+// 👇 Add this import
+import { SpeedInsights } from '@vercel/speed-insights/react'
+
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import StickyContactActions from './components/StickyContactActions'
@@ -92,6 +96,9 @@ export default function App() {
       </div>
       <Footer />
       <StickyContactActions />
+
+      {/* 👇 Speed Insights - Add this at the end */}
+      <SpeedInsights />
     </>
   )
 }
