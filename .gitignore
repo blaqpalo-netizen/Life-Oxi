@@ -1,0 +1,37 @@
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules/
+dist/
+build/
+*.log
+
+# Temporary / Cache
+tmp/
+.tmp/
+
+# Chrome / Browser profiles (very important!)
+tmp/chrome-*
+chrome-*
+Default/Cache/
+Default/Code Cache/
+Default/GPUCache/
+Default/Service Worker/
+Default/Session Storage/
+Default/Local Storage/
+Default/Network/Cookies*
+
+# Environment
+.env
+.env.local
+*.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.min.js
+*.map
+EOF

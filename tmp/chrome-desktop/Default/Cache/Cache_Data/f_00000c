@@ -1,0 +1,301 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/sections/CinematicHero.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=94cc41bd"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=94cc41bd"; const useEffect = __vite__cjsImport1_react["useEffect"]; const useRef = __vite__cjsImport1_react["useRef"];
+import gsap from "/node_modules/.vite/deps/gsap.js?v=94cc41bd";
+import MetricCounter from "/src/components/MetricCounter.tsx";
+import PremiumButton from "/src/components/PremiumButton.tsx";
+import { heroMetrics } from "/src/data/site.ts";
+export default function CinematicHero() {
+  _s();
+  const heroRef = useRef(null);
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const items = hero.querySelectorAll("[data-hero]");
+    if (reduceMotion) {
+      items.forEach((item) => {
+        if (item instanceof HTMLElement) {
+          item.style.opacity = "1";
+          item.style.transform = "none";
+        }
+      });
+      return;
+    }
+    const timeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+    timeline.fromTo(
+      items,
+      { autoAlpha: 0, y: 42 },
+      { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.11, delay: 0.25 }
+    );
+    timeline.fromTo(
+      hero.querySelectorAll("[data-hud]"),
+      { autoAlpha: 0, x: 28 },
+      { autoAlpha: 1, x: 0, duration: 0.9, stagger: 0.12 },
+      "-=0.55"
+    );
+    return () => {
+      timeline.kill();
+    };
+  }, []);
+  return /* @__PURE__ */ jsxDEV(
+    "section",
+    {
+      "code-path": "src\\sections\\CinematicHero.tsx:46:5",
+      ref: heroRef,
+      id: "home",
+      className: "relative min-h-screen overflow-hidden bg-ink-950 pt-28 text-white",
+      children: [
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:51:7", className: "absolute inset-0", children: [
+          /* @__PURE__ */ jsxDEV(
+            "video",
+            {
+              "code-path": "src\\sections\\CinematicHero.tsx:52:9",
+              className: "h-full w-full object-cover opacity-[0.54]",
+              src: "/videos/hero-video-secondary.mp4",
+              poster: "/images/hero-poster.jpg",
+              autoPlay: true,
+              muted: true,
+              loop: true,
+              playsInline: true
+            },
+            void 0,
+            false,
+            {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 52,
+              columnNumber: 9
+            },
+            this
+          ),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:61:9", className: "absolute inset-0 bg-[linear-gradient(90deg,rgba(1,10,12,0.96)_0%,rgba(1,10,12,0.72)_42%,rgba(1,10,12,0.28)_100%)]" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+            lineNumber: 61,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:62:9", className: "absolute inset-0 bg-[linear-gradient(180deg,rgba(1,10,12,0.15)_0%,rgba(1,10,12,0.25)_48%,#01080a_100%)]" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+            lineNumber: 62,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:63:9", className: "scan-grid absolute inset-0 opacity-30", "aria-hidden": "true" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+            lineNumber: 63,
+            columnNumber: 9
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+          lineNumber: 51,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:66:7", className: "section-shell relative z-10 grid min-h-[calc(100vh-7rem)] items-end gap-12 pb-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:pb-0", children: [
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:67:9", className: "max-w-5xl pb-10 lg:pb-0", children: [
+            /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\CinematicHero.tsx:68:11", "data-hero": true, className: "mb-6 text-sm font-semibold uppercase text-brand-200", children: "Africa's next-generation healthcare engineering company" }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 68,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ jsxDEV(
+              "h1",
+              {
+                "code-path": "src\\sections\\CinematicHero.tsx:71:11",
+                "data-hero": true,
+                className: "max-w-5xl font-display text-5xl font-semibold leading-[0.94] text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl",
+                children: "Life-Oxi Medical Engineering"
+              },
+              void 0,
+              false,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 71,
+                columnNumber: 11
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV(
+              "p",
+              {
+                "code-path": "src\\sections\\CinematicHero.tsx:77:11",
+                "data-hero": true,
+                className: "mt-7 max-w-2xl text-lg leading-8 text-sage-100/90 sm:text-xl",
+                children: "Centralized oxygen, medical air, and vacuum infrastructure engineered so critical care has pressure, purity, and continuity at the bedside."
+              },
+              void 0,
+              false,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 77,
+                columnNumber: 11
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:85:11", "data-hero": true, className: "mt-9 flex flex-col gap-3 sm:flex-row", children: [
+              /* @__PURE__ */ jsxDEV(PremiumButton, { "code-path": "src\\sections\\CinematicHero.tsx:86:13", href: "#contact", children: "Request an engineering review" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 86,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV(PremiumButton, { "code-path": "src\\sections\\CinematicHero.tsx:87:13", href: "#technology", variant: "ghost", children: "Explore oxygen systems" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 87,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 85,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:92:11", "data-hero": true, className: "mt-12 grid max-w-3xl grid-cols-2 gap-5 border-y border-white/10 py-6 sm:grid-cols-4", children: heroMetrics.map(
+              (metric) => /* @__PURE__ */ jsxDEV(MetricCounter, { "code-path": "src\\sections\\CinematicHero.tsx:94:15", ...metric }, metric.label, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 94,
+                columnNumber: 13
+              }, this)
+            ) }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 92,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+            lineNumber: 67,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:99:9", className: "hidden lg:block", children: [
+            /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:100:11", "data-hud": true, className: "hero-hud", children: [
+              /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\CinematicHero.tsx:101:13", className: "text-xs font-semibold uppercase text-brand-200", children: "Live system logic" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 101,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:102:13", className: "mt-5 space-y-4", children: [
+                ["Primary source", "PSA oxygen plant"],
+                ["Backup source", "Auto manifold"],
+                ["Clinical safety", "AVSU zone isolation"],
+                ["Verification", "1.5x pressure test"]
+              ].map(
+                ([label, value]) => /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:109:17", className: "flex items-center justify-between gap-8 border-b border-white/8 pb-3", children: [
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:110:19", className: "text-xs text-sage-300", children: label }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                    lineNumber: 110,
+                    columnNumber: 19
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:111:19", className: "text-sm font-semibold text-white", children: value }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                    lineNumber: 111,
+                    columnNumber: 19
+                  }, this)
+                ] }, label, true, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 109,
+                  columnNumber: 15
+                }, this)
+              ) }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 102,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 100,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:117:11", "data-hud": true, className: "hero-hud mt-4", children: [
+              /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:118:13", className: "flex items-center gap-3", children: [
+                /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:119:15", className: "h-2.5 w-2.5 rounded-full bg-brand-300 shadow-[0_0_18px_rgba(97,255,176,0.72)]" }, void 0, false, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 119,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\CinematicHero.tsx:120:15", className: "text-sm font-semibold text-white", children: "Standards-ready delivery" }, void 0, false, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 120,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 118,
+                columnNumber: 13
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:122:13", className: "mt-5 grid grid-cols-3 gap-2 text-center text-xs font-semibold text-sage-100", children: [
+                /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:123:15", className: "rounded-full border border-white/10 py-2", children: "ISO 7396-1" }, void 0, false, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 123,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:124:15", className: "rounded-full border border-white/10 py-2", children: "HTM 02-01" }, void 0, false, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 124,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\CinematicHero.tsx:125:15", className: "rounded-full border border-white/10 py-2", children: "ASTM B819" }, void 0, false, {
+                  fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                  lineNumber: 125,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+                lineNumber: 122,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+              lineNumber: 117,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+            lineNumber: 99,
+            columnNumber: 9
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+          lineNumber: 66,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\CinematicHero.tsx:131:7", className: "absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-300/70 to-transparent" }, void 0, false, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+          lineNumber: 131,
+          columnNumber: 7
+        }, this)
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx",
+      lineNumber: 46,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(CinematicHero, "rS7LcCXjly7/pTs1LPmN/oyd16w=");
+_c = CinematicHero;
+var _c;
+$RefreshReg$(_c, "CinematicHero");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "E:/All DOCS/LIFE_OXI/src/sections/CinematicHero.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QSxxQkFJQTtBQUFBLGlCQVRBO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBVUE7QUFBQSxlQTVCQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQTZCQTtBQUFBLGFBOURBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUErREE7QUFBQSxRQUVBLHVGQUFVLHdIQUFWO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBVTtBQUFBO0FBQUE7QUFBQSxJQXJGVjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsRUFzRkE7QUFFQTtBQUFBN0IsR0EvSEFELGVBQUE7QUFBQSxLQUFBQTtBQUFBLElBQUFnQztBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJ1c2VFZmZlY3QiLCJ1c2VSZWYiLCJnc2FwIiwiTWV0cmljQ291bnRlciIsIlByZW1pdW1CdXR0b24iLCJoZXJvTWV0cmljcyIsIkNpbmVtYXRpY0hlcm8iLCJfcyIsImhlcm9SZWYiLCJoZXJvIiwiY3VycmVudCIsInJlZHVjZU1vdGlvbiIsIndpbmRvdyIsIm1hdGNoTWVkaWEiLCJtYXRjaGVzIiwiaXRlbXMiLCJxdWVyeVNlbGVjdG9yQWxsIiwiZm9yRWFjaCIsIml0ZW0iLCJIVE1MRWxlbWVudCIsInN0eWxlIiwib3BhY2l0eSIsInRyYW5zZm9ybSIsInRpbWVsaW5lIiwiZGVmYXVsdHMiLCJlYXNlIiwiZnJvbVRvIiwiYXV0b0FscGhhIiwieSIsImR1cmF0aW9uIiwic3RhZ2dlciIsImRlbGF5IiwieCIsImtpbGwiLCJtYXAiLCJtZXRyaWMiLCJsYWJlbCIsInZhbHVlIiwiX2MiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZXMiOlsiQ2luZW1hdGljSGVyby50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VSZWYgfSBmcm9tICdyZWFjdCdcbmltcG9ydCBnc2FwIGZyb20gJ2dzYXAnXG5pbXBvcnQgTWV0cmljQ291bnRlciBmcm9tICdAL2NvbXBvbmVudHMvTWV0cmljQ291bnRlcidcbmltcG9ydCBQcmVtaXVtQnV0dG9uIGZyb20gJ0AvY29tcG9uZW50cy9QcmVtaXVtQnV0dG9uJ1xuaW1wb3J0IHsgaGVyb01ldHJpY3MgfSBmcm9tICdAL2RhdGEvc2l0ZSdcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQ2luZW1hdGljSGVybygpIHtcbiAgY29uc3QgaGVyb1JlZiA9IHVzZVJlZjxIVE1MRWxlbWVudD4obnVsbClcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIGNvbnN0IGhlcm8gPSBoZXJvUmVmLmN1cnJlbnRcbiAgICBpZiAoIWhlcm8pIHJldHVyblxuXG4gICAgY29uc3QgcmVkdWNlTW90aW9uID0gd2luZG93Lm1hdGNoTWVkaWEoJyhwcmVmZXJzLXJlZHVjZWQtbW90aW9uOiByZWR1Y2UpJykubWF0Y2hlc1xuICAgIGNvbnN0IGl0ZW1zID0gaGVyby5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1oZXJvXScpXG5cbiAgICBpZiAocmVkdWNlTW90aW9uKSB7XG4gICAgICBpdGVtcy5mb3JFYWNoKChpdGVtKSA9PiB7XG4gICAgICAgIGlmIChpdGVtIGluc3RhbmNlb2YgSFRNTEVsZW1lbnQpIHtcbiAgICAgICAgICBpdGVtLnN0eWxlLm9wYWNpdHkgPSAnMSdcbiAgICAgICAgICBpdGVtLnN0eWxlLnRyYW5zZm9ybSA9ICdub25lJ1xuICAgICAgICB9XG4gICAgICB9KVxuICAgICAgcmV0dXJuXG4gICAgfVxuXG4gICAgY29uc3QgdGltZWxpbmUgPSBnc2FwLnRpbWVsaW5lKHsgZGVmYXVsdHM6IHsgZWFzZTogJ3Bvd2VyMy5vdXQnIH0gfSlcbiAgICB0aW1lbGluZS5mcm9tVG8oXG4gICAgICBpdGVtcyxcbiAgICAgIHsgYXV0b0FscGhhOiAwLCB5OiA0MiB9LFxuICAgICAgeyBhdXRvQWxwaGE6IDEsIHk6IDAsIGR1cmF0aW9uOiAxLjEsIHN0YWdnZXI6IDAuMTEsIGRlbGF5OiAwLjI1IH1cbiAgICApXG4gICAgdGltZWxpbmUuZnJvbVRvKFxuICAgICAgaGVyby5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1odWRdJyksXG4gICAgICB7IGF1dG9BbHBoYTogMCwgeDogMjggfSxcbiAgICAgIHsgYXV0b0FscGhhOiAxLCB4OiAwLCBkdXJhdGlvbjogMC45LCBzdGFnZ2VyOiAwLjEyIH0sXG4gICAgICAnLT0wLjU1J1xuICAgIClcblxuICAgIHJldHVybiAoKSA9PiB7XG4gICAgICB0aW1lbGluZS5raWxsKClcbiAgICB9XG4gIH0sIFtdKVxuXG4gIHJldHVybiAoXG4gICAgPHNlY3Rpb25cbiAgICAgIHJlZj17aGVyb1JlZn1cbiAgICAgIGlkPVwiaG9tZVwiXG4gICAgICBjbGFzc05hbWU9XCJyZWxhdGl2ZSBtaW4taC1zY3JlZW4gb3ZlcmZsb3ctaGlkZGVuIGJnLWluay05NTAgcHQtMjggdGV4dC13aGl0ZVwiXG4gICAgPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wXCI+XG4gICAgICAgIDx2aWRlb1xuICAgICAgICAgIGNsYXNzTmFtZT1cImgtZnVsbCB3LWZ1bGwgb2JqZWN0LWNvdmVyIG9wYWNpdHktWzAuNTRdXCJcbiAgICAgICAgICBzcmM9XCIvdmlkZW9zL2hlcm8tdmlkZW8tc2Vjb25kYXJ5Lm1wNFwiXG4gICAgICAgICAgcG9zdGVyPVwiL2ltYWdlcy9oZXJvLXBvc3Rlci5qcGdcIlxuICAgICAgICAgIGF1dG9QbGF5XG4gICAgICAgICAgbXV0ZWRcbiAgICAgICAgICBsb29wXG4gICAgICAgICAgcGxheXNJbmxpbmVcbiAgICAgICAgLz5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIGJnLVtsaW5lYXItZ3JhZGllbnQoOTBkZWcscmdiYSgxLDEwLDEyLDAuOTYpXzAlLHJnYmEoMSwxMCwxMiwwLjcyKV80MiUscmdiYSgxLDEwLDEyLDAuMjgpXzEwMCUpXVwiIC8+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYWJzb2x1dGUgaW5zZXQtMCBiZy1bbGluZWFyLWdyYWRpZW50KDE4MGRlZyxyZ2JhKDEsMTAsMTIsMC4xNSlfMCUscmdiYSgxLDEwLDEyLDAuMjUpXzQ4JSwjMDEwODBhXzEwMCUpXVwiIC8+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2Nhbi1ncmlkIGFic29sdXRlIGluc2V0LTAgb3BhY2l0eS0zMFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIC8+XG4gICAgICA8L2Rpdj5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJzZWN0aW9uLXNoZWxsIHJlbGF0aXZlIHotMTAgZ3JpZCBtaW4taC1bY2FsYygxMDB2aC03cmVtKV0gaXRlbXMtZW5kIGdhcC0xMiBwYi0xMCBsZzpncmlkLWNvbHMtW21pbm1heCgwLDFmcilfMjRyZW1dIGxnOml0ZW1zLWNlbnRlciBsZzpwYi0wXCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWF4LXctNXhsIHBiLTEwIGxnOnBiLTBcIj5cbiAgICAgICAgICA8cCBkYXRhLWhlcm8gY2xhc3NOYW1lPVwibWItNiB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdXBwZXJjYXNlIHRleHQtYnJhbmQtMjAwXCI+XG4gICAgICAgICAgICBBZnJpY2EncyBuZXh0LWdlbmVyYXRpb24gaGVhbHRoY2FyZSBlbmdpbmVlcmluZyBjb21wYW55XG4gICAgICAgICAgPC9wPlxuICAgICAgICAgIDxoMVxuICAgICAgICAgICAgZGF0YS1oZXJvXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJtYXgtdy01eGwgZm9udC1kaXNwbGF5IHRleHQtNXhsIGZvbnQtc2VtaWJvbGQgbGVhZGluZy1bMC45NF0gdGV4dC13aGl0ZSBzbTp0ZXh0LTZ4bCBtZDp0ZXh0LTd4bCBsZzp0ZXh0LTh4bCB4bDp0ZXh0LTl4bFwiXG4gICAgICAgICAgPlxuICAgICAgICAgICAgTGlmZS1PeGkgTWVkaWNhbCBFbmdpbmVlcmluZ1xuICAgICAgICAgIDwvaDE+XG4gICAgICAgICAgPHBcbiAgICAgICAgICAgIGRhdGEtaGVyb1xuICAgICAgICAgICAgY2xhc3NOYW1lPVwibXQtNyBtYXgtdy0yeGwgdGV4dC1sZyBsZWFkaW5nLTggdGV4dC1zYWdlLTEwMC85MCBzbTp0ZXh0LXhsXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICBDZW50cmFsaXplZCBveHlnZW4sIG1lZGljYWwgYWlyLCBhbmQgdmFjdXVtIGluZnJhc3RydWN0dXJlIGVuZ2luZWVyZWQgc29cbiAgICAgICAgICAgIGNyaXRpY2FsIGNhcmUgaGFzIHByZXNzdXJlLCBwdXJpdHksIGFuZCBjb250aW51aXR5IGF0IHRoZSBiZWRzaWRlLlxuICAgICAgICAgIDwvcD5cblxuICAgICAgICAgIDxkaXYgZGF0YS1oZXJvIGNsYXNzTmFtZT1cIm10LTkgZmxleCBmbGV4LWNvbCBnYXAtMyBzbTpmbGV4LXJvd1wiPlxuICAgICAgICAgICAgPFByZW1pdW1CdXR0b24gaHJlZj1cIiNjb250YWN0XCI+UmVxdWVzdCBhbiBlbmdpbmVlcmluZyByZXZpZXc8L1ByZW1pdW1CdXR0b24+XG4gICAgICAgICAgICA8UHJlbWl1bUJ1dHRvbiBocmVmPVwiI3RlY2hub2xvZ3lcIiB2YXJpYW50PVwiZ2hvc3RcIj5cbiAgICAgICAgICAgICAgRXhwbG9yZSBveHlnZW4gc3lzdGVtc1xuICAgICAgICAgICAgPC9QcmVtaXVtQnV0dG9uPlxuICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgPGRpdiBkYXRhLWhlcm8gY2xhc3NOYW1lPVwibXQtMTIgZ3JpZCBtYXgtdy0zeGwgZ3JpZC1jb2xzLTIgZ2FwLTUgYm9yZGVyLXkgYm9yZGVyLXdoaXRlLzEwIHB5LTYgc206Z3JpZC1jb2xzLTRcIj5cbiAgICAgICAgICAgIHtoZXJvTWV0cmljcy5tYXAoKG1ldHJpYykgPT4gKFxuICAgICAgICAgICAgICA8TWV0cmljQ291bnRlciBrZXk9e21ldHJpYy5sYWJlbH0gey4uLm1ldHJpY30gLz5cbiAgICAgICAgICAgICkpfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cblxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImhpZGRlbiBsZzpibG9ja1wiPlxuICAgICAgICAgIDxkaXYgZGF0YS1odWQgY2xhc3NOYW1lPVwiaGVyby1odWRcIj5cbiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgZm9udC1zZW1pYm9sZCB1cHBlcmNhc2UgdGV4dC1icmFuZC0yMDBcIj5MaXZlIHN5c3RlbSBsb2dpYzwvcD5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtNSBzcGFjZS15LTRcIj5cbiAgICAgICAgICAgICAge1tcbiAgICAgICAgICAgICAgICBbJ1ByaW1hcnkgc291cmNlJywgJ1BTQSBveHlnZW4gcGxhbnQnXSxcbiAgICAgICAgICAgICAgICBbJ0JhY2t1cCBzb3VyY2UnLCAnQXV0byBtYW5pZm9sZCddLFxuICAgICAgICAgICAgICAgIFsnQ2xpbmljYWwgc2FmZXR5JywgJ0FWU1Ugem9uZSBpc29sYXRpb24nXSxcbiAgICAgICAgICAgICAgICBbJ1ZlcmlmaWNhdGlvbicsICcxLjV4IHByZXNzdXJlIHRlc3QnXSxcbiAgICAgICAgICAgICAgXS5tYXAoKFtsYWJlbCwgdmFsdWVdKSA9PiAoXG4gICAgICAgICAgICAgICAgPGRpdiBrZXk9e2xhYmVsfSBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gZ2FwLTggYm9yZGVyLWIgYm9yZGVyLXdoaXRlLzggcGItM1wiPlxuICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LXNhZ2UtMzAwXCI+e2xhYmVsfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtc20gZm9udC1zZW1pYm9sZCB0ZXh0LXdoaXRlXCI+e3ZhbHVlfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgIDxkaXYgZGF0YS1odWQgY2xhc3NOYW1lPVwiaGVyby1odWQgbXQtNFwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtM1wiPlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJoLTIuNSB3LTIuNSByb3VuZGVkLWZ1bGwgYmctYnJhbmQtMzAwIHNoYWRvdy1bMF8wXzE4cHhfcmdiYSg5NywyNTUsMTc2LDAuNzIpXVwiIC8+XG4gICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQtc20gZm9udC1zZW1pYm9sZCB0ZXh0LXdoaXRlXCI+U3RhbmRhcmRzLXJlYWR5IGRlbGl2ZXJ5PC9wPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTUgZ3JpZCBncmlkLWNvbHMtMyBnYXAtMiB0ZXh0LWNlbnRlciB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgdGV4dC1zYWdlLTEwMFwiPlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJyb3VuZGVkLWZ1bGwgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBweS0yXCI+SVNPIDczOTYtMTwvc3Bhbj5cbiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwicm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItd2hpdGUvMTAgcHktMlwiPkhUTSAwMi0wMTwvc3Bhbj5cbiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwicm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItd2hpdGUvMTAgcHktMlwiPkFTVE0gQjgxOTwvc3Bhbj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIGJvdHRvbS0wIGxlZnQtMCByaWdodC0wIGgtcHggYmctZ3JhZGllbnQtdG8tciBmcm9tLXRyYW5zcGFyZW50IHZpYS1icmFuZC0zMDAvNzAgdG8tdHJhbnNwYXJlbnRcIiAvPlxuICAgIDwvc2VjdGlvbj5cbiAgKVxufVxuIl0sImZpbGUiOiJFOi9BbGwgRE9DUy9MSUZFX09YSS9zcmMvc2VjdGlvbnMvQ2luZW1hdGljSGVyby50c3gifQ==

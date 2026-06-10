@@ -1,0 +1,249 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Footer.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=94cc41bd"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { Link } from "/node_modules/.vite/deps/react-router.js?v=94cc41bd";
+import { Mail, MapPin, Phone } from "/node_modules/.vite/deps/lucide-react.js?v=94cc41bd";
+import BrandMark from "/src/components/BrandMark.tsx";
+import { contact, navigation } from "/src/data/site.ts?t=1779677589291";
+const serviceLinks = [
+  "MGPS",
+  "PSA Oxygen Plants",
+  "Medical Air & Vacuum",
+  "ICU Equipment",
+  "Specialized HVAC",
+  "Maintenance"
+];
+export default function Footer() {
+  return /* @__PURE__ */ jsxDEV("footer", { "code-path": "src\\components\\Footer.tsx:17:5", className: "relative overflow-hidden border-t border-white/10 bg-ink-950 text-white", children: [
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:18:7", className: "absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/60 to-transparent" }, void 0, false, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+      lineNumber: 18,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:19:7", className: "pointer-events-none absolute inset-0 select-none overflow-hidden", children: /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\components\\Footer.tsx:20:9", className: "absolute -left-8 bottom-0 font-display text-8xl font-semibold leading-none text-white/[0.025] sm:text-9xl lg:text-[11rem]", children: "LOME" }, void 0, false, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+      lineNumber: 20,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+      lineNumber: 19,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:25:7", className: "section-shell relative z-10 py-16 sm:py-20", children: [
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:26:9", className: "grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr]", children: [
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:27:11", children: [
+          /* @__PURE__ */ jsxDEV(BrandMark, { "code-path": "src\\components\\Footer.tsx:28:13" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 28,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\components\\Footer.tsx:29:13", className: "mt-6 max-w-md text-sm leading-7 text-sage-100/70", children: "Medical gas pipeline systems, PSA oxygen plants, ICU equipment, HVAC, monitoring, and maintenance for healthcare infrastructure across Africa." }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 29,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:33:13", className: "mt-8 space-y-3", children: [
+            /* @__PURE__ */ jsxDEV(
+              "a",
+              {
+                "code-path": "src\\components\\Footer.tsx:34:15",
+                href: `tel:+233${contact.phones[0].slice(1)}`,
+                className: "flex items-center gap-3 text-sm text-sage-100/70 transition-colors hover:text-white",
+                children: [
+                  /* @__PURE__ */ jsxDEV(Phone, { "code-path": "src\\components\\Footer.tsx:38:17", size: 16 }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                    lineNumber: 38,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\components\\Footer.tsx:39:17", children: contact.phones.join(" / ") }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                    lineNumber: 39,
+                    columnNumber: 17
+                  }, this)
+                ]
+              },
+              void 0,
+              true,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                lineNumber: 34,
+                columnNumber: 15
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV(
+              "a",
+              {
+                "code-path": "src\\components\\Footer.tsx:41:15",
+                href: `mailto:${contact.email}`,
+                className: "flex items-center gap-3 text-sm text-sage-100/70 transition-colors hover:text-white",
+                children: [
+                  /* @__PURE__ */ jsxDEV(Mail, { "code-path": "src\\components\\Footer.tsx:45:17", size: 16 }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                    lineNumber: 45,
+                    columnNumber: 17
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\components\\Footer.tsx:46:17", children: contact.email }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                    lineNumber: 46,
+                    columnNumber: 17
+                  }, this)
+                ]
+              },
+              void 0,
+              true,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                lineNumber: 41,
+                columnNumber: 15
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:48:15", className: "flex items-center gap-3 text-sm text-sage-100/70", children: [
+              /* @__PURE__ */ jsxDEV(MapPin, { "code-path": "src\\components\\Footer.tsx:49:17", size: 16 }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                lineNumber: 49,
+                columnNumber: 17
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\components\\Footer.tsx:50:17", children: contact.location }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                lineNumber: 50,
+                columnNumber: 17
+              }, this)
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+              lineNumber: 48,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 33,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+          lineNumber: 27,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:55:11", children: [
+          /* @__PURE__ */ jsxDEV("h4", { "code-path": "src\\components\\Footer.tsx:56:13", className: "mb-5 text-sm font-semibold text-white", children: "Navigation" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 56,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("ul", { "code-path": "src\\components\\Footer.tsx:57:13", className: "space-y-3 text-sm", children: navigation.map(
+            (link) => /* @__PURE__ */ jsxDEV("li", { "code-path": "src\\components\\Footer.tsx:59:17", children: /* @__PURE__ */ jsxDEV(
+              Link,
+              {
+                "code-path": "src\\components\\Footer.tsx:60:19",
+                to: link.href,
+                className: "text-sage-100/70 transition-colors hover:text-white",
+                children: link.label
+              },
+              void 0,
+              false,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+                lineNumber: 60,
+                columnNumber: 19
+              },
+              this
+            ) }, link.href, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+              lineNumber: 59,
+              columnNumber: 15
+            }, this)
+          ) }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 57,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+          lineNumber: 55,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:71:11", children: [
+          /* @__PURE__ */ jsxDEV("h4", { "code-path": "src\\components\\Footer.tsx:72:13", className: "mb-5 text-sm font-semibold text-white", children: "Engineering scope" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 72,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("ul", { "code-path": "src\\components\\Footer.tsx:73:13", className: "space-y-3 text-sm text-sage-100/70", children: serviceLinks.map(
+            (link) => /* @__PURE__ */ jsxDEV("li", { "code-path": "src\\components\\Footer.tsx:75:17", children: link }, link, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+              lineNumber: 75,
+              columnNumber: 15
+            }, this)
+          ) }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+            lineNumber: 73,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+          lineNumber: 71,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+        lineNumber: 26,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\components\\Footer.tsx:81:9", className: "mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-sage-100/60 md:flex-row md:items-center md:justify-between", children: [
+        /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\components\\Footer.tsx:82:11", children: [
+          "© ",
+          (/* @__PURE__ */ new Date()).getFullYear(),
+          " Life-Oxi Medical Engineering. All rights reserved."
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+          lineNumber: 82,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\components\\Footer.tsx:85:11", children: "ISO 7396-1 / HTM 02-01 / ASTM B819 aligned engineering." }, void 0, false, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+          lineNumber: 85,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+        lineNumber: 81,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+      lineNumber: 25,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx",
+    lineNumber: 17,
+    columnNumber: 5
+  }, this);
+}
+_c = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/All DOCS/LIFE_OXI/src/components/Footer.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/All DOCS/LIFE_OXI/src/components/Footer.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "E:/All DOCS/LIFE_OXI/src/components/Footer.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUNuQixLQUhBO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBSUE7QUFBQSxhQU5BO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFPQTtBQUFBLFdBcERBO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFxREE7QUFBQSxNQUVBLGlGQUFZLDhJQUNaO0FBQUEsd0ZBQVk7QUFBQTtBQUFBLFdBQ1osb0JBQUFHLEtBQUEsR0FBQUMsWUFBQTtBQUFBO0FBQUEsYUFEQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBRUE7QUFBQSxRQUNBLGdGQUFZLHVFQUFaO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBWTtBQUFBLFdBSlo7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUtBO0FBQUEsU0E3REE7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQThEQTtBQUFBLE9BdEVBO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0F1RUE7QUFFQTtBQUFBQyxLQTNFQVo7QUFBQSxJQUFBWTtBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJMaW5rIiwiTWFpbCIsIk1hcFBpbiIsIlBob25lIiwiQnJhbmRNYXJrIiwiY29udGFjdCIsIm5hdmlnYXRpb24iLCJzZXJ2aWNlTGlua3MiLCJGb290ZXIiLCJwaG9uZXMiLCJzbGljZSIsImpvaW4iLCJlbWFpbCIsImxvY2F0aW9uIiwibWFwIiwibGluayIsImhyZWYiLCJsYWJlbCIsIkRhdGUiLCJnZXRGdWxsWWVhciIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkZvb3Rlci50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTGluayB9IGZyb20gJ3JlYWN0LXJvdXRlcidcbmltcG9ydCB7IE1haWwsIE1hcFBpbiwgUGhvbmUgfSBmcm9tICdsdWNpZGUtcmVhY3QnXG5pbXBvcnQgQnJhbmRNYXJrIGZyb20gJ0AvY29tcG9uZW50cy9CcmFuZE1hcmsnXG5pbXBvcnQgeyBjb250YWN0LCBuYXZpZ2F0aW9uIH0gZnJvbSAnQC9kYXRhL3NpdGUnXG5cbmNvbnN0IHNlcnZpY2VMaW5rcyA9IFtcbiAgJ01HUFMnLFxuICAnUFNBIE94eWdlbiBQbGFudHMnLFxuICAnTWVkaWNhbCBBaXIgJiBWYWN1dW0nLFxuICAnSUNVIEVxdWlwbWVudCcsXG4gICdTcGVjaWFsaXplZCBIVkFDJyxcbiAgJ01haW50ZW5hbmNlJyxcbl1cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRm9vdGVyKCkge1xuICByZXR1cm4gKFxuICAgIDxmb290ZXIgY2xhc3NOYW1lPVwicmVsYXRpdmUgb3ZlcmZsb3ctaGlkZGVuIGJvcmRlci10IGJvcmRlci13aGl0ZS8xMCBiZy1pbmstOTUwIHRleHQtd2hpdGVcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYWJzb2x1dGUgaW5zZXQteC0wIHRvcC0wIGgtcHggYmctZ3JhZGllbnQtdG8tciBmcm9tLXRyYW5zcGFyZW50IHZpYS1icmFuZC0zMDAvNjAgdG8tdHJhbnNwYXJlbnRcIiAvPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJwb2ludGVyLWV2ZW50cy1ub25lIGFic29sdXRlIGluc2V0LTAgc2VsZWN0LW5vbmUgb3ZlcmZsb3ctaGlkZGVuXCI+XG4gICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImFic29sdXRlIC1sZWZ0LTggYm90dG9tLTAgZm9udC1kaXNwbGF5IHRleHQtOHhsIGZvbnQtc2VtaWJvbGQgbGVhZGluZy1ub25lIHRleHQtd2hpdGUvWzAuMDI1XSBzbTp0ZXh0LTl4bCBsZzp0ZXh0LVsxMXJlbV1cIj5cbiAgICAgICAgICBMT01FXG4gICAgICAgIDwvc3Bhbj5cbiAgICAgIDwvZGl2PlxuXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNlY3Rpb24tc2hlbGwgcmVsYXRpdmUgei0xMCBweS0xNiBzbTpweS0yMFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ2FwLTEyIGxnOmdyaWQtY29scy1bMS4yZnJfMC44ZnJfMC44ZnJdXCI+XG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxCcmFuZE1hcmsgLz5cbiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTYgbWF4LXctbWQgdGV4dC1zbSBsZWFkaW5nLTcgdGV4dC1zYWdlLTEwMC83MFwiPlxuICAgICAgICAgICAgICBNZWRpY2FsIGdhcyBwaXBlbGluZSBzeXN0ZW1zLCBQU0Egb3h5Z2VuIHBsYW50cywgSUNVIGVxdWlwbWVudCwgSFZBQyxcbiAgICAgICAgICAgICAgbW9uaXRvcmluZywgYW5kIG1haW50ZW5hbmNlIGZvciBoZWFsdGhjYXJlIGluZnJhc3RydWN0dXJlIGFjcm9zcyBBZnJpY2EuXG4gICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTggc3BhY2UteS0zXCI+XG4gICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgaHJlZj17YHRlbDorMjMzJHtjb250YWN0LnBob25lc1swXS5zbGljZSgxKX1gfVxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIHRleHQtc20gdGV4dC1zYWdlLTEwMC83MCB0cmFuc2l0aW9uLWNvbG9ycyBob3Zlcjp0ZXh0LXdoaXRlXCJcbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxQaG9uZSBzaXplPXsxNn0gLz5cbiAgICAgICAgICAgICAgICA8c3Bhbj57Y29udGFjdC5waG9uZXMuam9pbignIC8gJyl9PC9zcGFuPlxuICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgaHJlZj17YG1haWx0bzoke2NvbnRhY3QuZW1haWx9YH1cbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyB0ZXh0LXNtIHRleHQtc2FnZS0xMDAvNzAgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6dGV4dC13aGl0ZVwiXG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8TWFpbCBzaXplPXsxNn0gLz5cbiAgICAgICAgICAgICAgICA8c3Bhbj57Y29udGFjdC5lbWFpbH08L3NwYW4+XG4gICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMyB0ZXh0LXNtIHRleHQtc2FnZS0xMDAvNzBcIj5cbiAgICAgICAgICAgICAgICA8TWFwUGluIHNpemU9ezE2fSAvPlxuICAgICAgICAgICAgICAgIDxzcGFuPntjb250YWN0LmxvY2F0aW9ufTwvc3Bhbj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICA8aDQgY2xhc3NOYW1lPVwibWItNSB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZVwiPk5hdmlnYXRpb248L2g0PlxuICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cInNwYWNlLXktMyB0ZXh0LXNtXCI+XG4gICAgICAgICAgICAgIHtuYXZpZ2F0aW9uLm1hcCgobGluaykgPT4gKFxuICAgICAgICAgICAgICAgIDxsaSBrZXk9e2xpbmsuaHJlZn0+XG4gICAgICAgICAgICAgICAgICA8TGlua1xuICAgICAgICAgICAgICAgICAgICB0bz17bGluay5ocmVmfVxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ0ZXh0LXNhZ2UtMTAwLzcwIHRyYW5zaXRpb24tY29sb3JzIGhvdmVyOnRleHQtd2hpdGVcIlxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7bGluay5sYWJlbH1cbiAgICAgICAgICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGg0IGNsYXNzTmFtZT1cIm1iLTUgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtd2hpdGVcIj5FbmdpbmVlcmluZyBzY29wZTwvaDQ+XG4gICAgICAgICAgICA8dWwgY2xhc3NOYW1lPVwic3BhY2UteS0zIHRleHQtc20gdGV4dC1zYWdlLTEwMC83MFwiPlxuICAgICAgICAgICAgICB7c2VydmljZUxpbmtzLm1hcCgobGluaykgPT4gKFxuICAgICAgICAgICAgICAgIDxsaSBrZXk9e2xpbmt9PntsaW5rfTwvbGk+XG4gICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC0xNCBmbGV4IGZsZXgtY29sIGdhcC00IGJvcmRlci10IGJvcmRlci13aGl0ZS8xMCBwdC02IHRleHQteHMgdGV4dC1zYWdlLTEwMC82MCBtZDpmbGV4LXJvdyBtZDppdGVtcy1jZW50ZXIgbWQ6anVzdGlmeS1iZXR3ZWVuXCI+XG4gICAgICAgICAgPHA+XG4gICAgICAgICAgICAmY29weTsge25ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKX0gTGlmZS1PeGkgTWVkaWNhbCBFbmdpbmVlcmluZy4gQWxsIHJpZ2h0cyByZXNlcnZlZC5cbiAgICAgICAgICA8L3A+XG4gICAgICAgICAgPHA+SVNPIDczOTYtMSAvIEhUTSAwMi0wMSAvIEFTVE0gQjgxOSBhbGlnbmVkIGVuZ2luZWVyaW5nLjwvcD5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICA8L2Zvb3Rlcj5cbiAgKVxufVxuIl0sImZpbGUiOiJFOi9BbGwgRE9DUy9MSUZFX09YSS9zcmMvY29tcG9uZW50cy9Gb290ZXIudHN4In0=

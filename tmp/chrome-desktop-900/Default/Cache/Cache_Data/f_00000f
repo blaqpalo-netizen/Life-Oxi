@@ -1,0 +1,493 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/sections/ContactExperience.tsx");import.meta.env = {"BASE_URL": "/", "DEV": true, "MODE": "development", "PROD": false, "SSR": false};import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=94cc41bd"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=94cc41bd"; const useMemo = __vite__cjsImport1_react["useMemo"]; const useState = __vite__cjsImport1_react["useState"];
+import { Mail, MapPin, MessageCircle, Phone, Send } from "/node_modules/.vite/deps/lucide-react.js?v=94cc41bd";
+import SectionHeader from "/src/components/SectionHeader.tsx";
+import PremiumButton from "/src/components/PremiumButton.tsx";
+import { contact, services } from "/src/data/site.ts";
+const defaultInquiry = {
+  name: "",
+  facility: "",
+  email: "",
+  phone: "",
+  service: "Medical Gas Pipeline Systems",
+  beds: "",
+  message: ""
+};
+function inquiryFromForm(formData) {
+  return {
+    name: String(formData.get("name") || ""),
+    facility: String(formData.get("facility") || ""),
+    email: String(formData.get("email") || ""),
+    phone: String(formData.get("phone") || ""),
+    service: String(formData.get("service") || ""),
+    beds: String(formData.get("beds") || ""),
+    message: String(formData.get("message") || "")
+  };
+}
+function buildInquiryText(inquiry) {
+  return [
+    `Name: ${inquiry.name}`,
+    `Facility: ${inquiry.facility}`,
+    `Email: ${inquiry.email}`,
+    `Phone: ${inquiry.phone}`,
+    `Service: ${inquiry.service}`,
+    `Bed count: ${inquiry.beds || "Not specified"}`,
+    "",
+    inquiry.message || "Please contact me for an engineering review."
+  ].join("\n");
+}
+export default function ContactExperience() {
+  _s();
+  const [state, setState] = useState("idle");
+  const [inquiry, setInquiry] = useState(defaultInquiry);
+  const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+  const encodedInquiry = useMemo(() => encodeURIComponent(buildInquiryText(inquiry)), [inquiry]);
+  const emailHref = `mailto:${contact.email}?subject=${encodeURIComponent("LOME engineering inquiry")}&body=${encodedInquiry}`;
+  const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodedInquiry}`;
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const nextInquiry = inquiryFromForm(formData);
+    setInquiry(nextInquiry);
+    if (!endpoint) {
+      setState("fallback");
+      return;
+    }
+    setState("sending");
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData
+      });
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+      setState("sent");
+      form.reset();
+    } catch {
+      setState("error");
+    }
+  }
+  return /* @__PURE__ */ jsxDEV("section", { "code-path": "src\\sections\\ContactExperience.tsx:95:5", id: "contact", className: "relative overflow-hidden bg-ink-950 py-24 text-white sm:py-32", children: [
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:96:7", className: "absolute inset-0", children: [
+      /* @__PURE__ */ jsxDEV(
+        "img",
+        {
+          "code-path": "src\\sections\\ContactExperience.tsx:97:9",
+          src: "/images/oxygen-abstract.jpg",
+          alt: "",
+          className: "h-full w-full object-cover opacity-[0.12]",
+          loading: "lazy"
+        },
+        void 0,
+        false,
+        {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 97,
+          columnNumber: 9
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:103:9", className: "absolute inset-0 bg-[linear-gradient(180deg,#01080a_0%,rgba(1,8,10,0.88)_46%,#01080a_100%)]" }, void 0, false, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 103,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+      lineNumber: 96,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:106:7", className: "section-shell relative z-10", children: /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:107:9", className: "grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-start", children: [
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:108:11", className: "lg:sticky lg:top-28", children: [
+        /* @__PURE__ */ jsxDEV(
+          SectionHeader,
+          {
+            "code-path": "src\\sections\\ContactExperience.tsx:109:13",
+            eyebrow: "Contact experience",
+            title: "Send the drawings. We will engineer the oxygen backbone.",
+            copy: "Share your facility name, bed count, clinical zones, and target system. LOME will respond with the right technical path."
+          },
+          void 0,
+          false,
+          {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 109,
+            columnNumber: 13
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:115:13", "data-reveal": true, className: "mt-10 space-y-4", children: [
+          /* @__PURE__ */ jsxDEV("a", { "code-path": "src\\sections\\ContactExperience.tsx:116:15", href: `tel:+233${contact.phones[0].slice(1)}`, className: "contact-line", children: [
+            /* @__PURE__ */ jsxDEV(Phone, { "code-path": "src\\sections\\ContactExperience.tsx:117:17", size: 18 }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 117,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\ContactExperience.tsx:118:17", children: contact.phones.join(" / ") }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 118,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 116,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ jsxDEV("a", { "code-path": "src\\sections\\ContactExperience.tsx:120:15", href: `mailto:${contact.email}`, className: "contact-line", children: [
+            /* @__PURE__ */ jsxDEV(Mail, { "code-path": "src\\sections\\ContactExperience.tsx:121:17", size: 18 }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 121,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\ContactExperience.tsx:122:17", children: contact.email }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 122,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 120,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:124:15", className: "contact-line", children: [
+            /* @__PURE__ */ jsxDEV(MapPin, { "code-path": "src\\sections\\ContactExperience.tsx:125:17", size: 18 }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 125,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\ContactExperience.tsx:126:17", children: contact.location }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 126,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 124,
+            columnNumber: 15
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 115,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:130:13", "data-reveal": true, className: "mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col", children: [
+          /* @__PURE__ */ jsxDEV(PremiumButton, { "code-path": "src\\sections\\ContactExperience.tsx:131:15", href: whatsappHref, target: "_blank", rel: "noreferrer", variant: "ghost", children: "WhatsApp engineering desk" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 131,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ jsxDEV(PremiumButton, { "code-path": "src\\sections\\ContactExperience.tsx:134:15", href: emailHref, variant: "ghost", children: "Email project details" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 134,
+            columnNumber: 15
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 130,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 108,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:140:11", "data-reveal": true, className: "border border-white/10 bg-white/[0.035] p-5 shadow-2xl backdrop-blur-xl sm:p-8", children: state === "sent" ? /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:142:15", className: "grid min-h-[32rem] place-items-center text-center", children: /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:143:17", children: [
+        /* @__PURE__ */ jsxDEV(Send, { "code-path": "src\\sections\\ContactExperience.tsx:144:19", className: "mx-auto mb-6 text-brand-200", size: 42, strokeWidth: 1.5 }, void 0, false, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 144,
+          columnNumber: 19
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { "code-path": "src\\sections\\ContactExperience.tsx:145:19", className: "font-display text-4xl font-semibold", children: "Inquiry received." }, void 0, false, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 145,
+          columnNumber: 19
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\ContactExperience.tsx:146:19", className: "mx-auto mt-4 max-w-md text-sage-100/80", children: "The engineering team will review your request and respond with the next technical step." }, void 0, false, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 146,
+          columnNumber: 19
+        }, this)
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 143,
+        columnNumber: 17
+      }, this) }, void 0, false, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 142,
+        columnNumber: 13
+      }, this) : /* @__PURE__ */ jsxDEV("form", { "code-path": "src\\sections\\ContactExperience.tsx:152:15", onSubmit: handleSubmit, className: "space-y-5", children: [
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:153:17", className: "grid gap-5 sm:grid-cols-2", children: [
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:154:19", className: "field-label", children: [
+            "Full name",
+            /* @__PURE__ */ jsxDEV("input", { "code-path": "src\\sections\\ContactExperience.tsx:156:21", name: "name", required: true, className: "field-input", placeholder: "Your name" }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 156,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 154,
+            columnNumber: 19
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:158:19", className: "field-label", children: [
+            "Facility",
+            /* @__PURE__ */ jsxDEV("input", { "code-path": "src\\sections\\ContactExperience.tsx:160:21", name: "facility", required: true, className: "field-input", placeholder: "Hospital or project name" }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 160,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 158,
+            columnNumber: 19
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 153,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:164:17", className: "grid gap-5 sm:grid-cols-2", children: [
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:165:19", className: "field-label", children: [
+            "Email",
+            /* @__PURE__ */ jsxDEV("input", { "code-path": "src\\sections\\ContactExperience.tsx:167:21", name: "email", type: "email", required: true, className: "field-input", placeholder: "name@facility.com" }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 167,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 165,
+            columnNumber: 19
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:169:19", className: "field-label", children: [
+            "Phone",
+            /* @__PURE__ */ jsxDEV("input", { "code-path": "src\\sections\\ContactExperience.tsx:171:21", name: "phone", required: true, className: "field-input", placeholder: "024..." }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 171,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 169,
+            columnNumber: 19
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 164,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:175:17", className: "grid gap-5 sm:grid-cols-2", children: [
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:176:19", className: "field-label", children: [
+            "System priority",
+            /* @__PURE__ */ jsxDEV("select", { "code-path": "src\\sections\\ContactExperience.tsx:178:21", name: "service", className: "field-input", defaultValue: defaultInquiry.service, children: services.map(
+              (service) => /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:180:25", children: service.title }, service.title, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 180,
+                columnNumber: 21
+              }, this)
+            ) }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 178,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 176,
+            columnNumber: 19
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:184:19", className: "field-label", children: [
+            "Bed count",
+            /* @__PURE__ */ jsxDEV("select", { "code-path": "src\\sections\\ContactExperience.tsx:186:21", name: "beds", className: "field-input", defaultValue: "", children: [
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:187:23", value: "", children: "Select range" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 187,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:188:23", children: "Under 50" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 188,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:189:23", children: "50-100" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 189,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:190:23", children: "100-200" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 190,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:191:23", children: "200-500" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 191,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("option", { "code-path": "src\\sections\\ContactExperience.tsx:192:23", children: "500+" }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 192,
+                columnNumber: 23
+              }, this)
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 186,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 184,
+            columnNumber: 19
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 175,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV("label", { "code-path": "src\\sections\\ContactExperience.tsx:197:17", className: "field-label", children: [
+          "Project brief",
+          /* @__PURE__ */ jsxDEV(
+            "textarea",
+            {
+              "code-path": "src\\sections\\ContactExperience.tsx:199:19",
+              name: "message",
+              rows: 6,
+              className: "field-input resize-none",
+              placeholder: "Tell us about the facility, current oxygen setup, drawings, wards, theatres, ICU zones, or emergency needs."
+            },
+            void 0,
+            false,
+            {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 199,
+              columnNumber: 19
+            },
+            this
+          )
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 197,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(
+          "button",
+          {
+            "code-path": "src\\sections\\ContactExperience.tsx:207:17",
+            type: "submit",
+            disabled: state === "sending",
+            className: "inline-flex min-h-[3.25rem] w-full items-center justify-center gap-3 rounded-full bg-brand-500 px-6 text-sm font-semibold text-white transition duration-300 hover:bg-brand-400 disabled:cursor-wait disabled:opacity-70",
+            children: [
+              /* @__PURE__ */ jsxDEV(Send, { "code-path": "src\\sections\\ContactExperience.tsx:212:19", size: 16 }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 212,
+                columnNumber: 19
+              }, this),
+              state === "sending" ? "Submitting inquiry" : "Submit engineering inquiry"
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 207,
+            columnNumber: 17
+          },
+          this
+        ),
+        state === "fallback" || state === "error" ? /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:217:19", className: "border border-brand-300/30 bg-brand-500/10 p-5", children: [
+          /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\ContactExperience.tsx:218:21", className: "text-sm leading-6 text-sage-100", children: state === "fallback" ? "A Formspree endpoint is not configured yet. Send the same inquiry through WhatsApp or email now." : "The form endpoint did not respond. Send the inquiry through WhatsApp or email instead." }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 218,
+            columnNumber: 21
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\ContactExperience.tsx:223:21", className: "mt-4 flex flex-col gap-3 sm:flex-row", children: [
+            /* @__PURE__ */ jsxDEV("a", { "code-path": "src\\sections\\ContactExperience.tsx:224:23", href: whatsappHref, target: "_blank", rel: "noreferrer", className: "fallback-action", children: [
+              /* @__PURE__ */ jsxDEV(MessageCircle, { "code-path": "src\\sections\\ContactExperience.tsx:225:25", size: 16 }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 225,
+                columnNumber: 25
+              }, this),
+              "WhatsApp"
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 224,
+              columnNumber: 23
+            }, this),
+            /* @__PURE__ */ jsxDEV("a", { "code-path": "src\\sections\\ContactExperience.tsx:228:23", href: emailHref, className: "fallback-action", children: [
+              /* @__PURE__ */ jsxDEV(Mail, { "code-path": "src\\sections\\ContactExperience.tsx:229:25", size: 16 }, void 0, false, {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+                lineNumber: 229,
+                columnNumber: 25
+              }, this),
+              "Email"
+            ] }, void 0, true, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+              lineNumber: 228,
+              columnNumber: 23
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+            lineNumber: 223,
+            columnNumber: 21
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+          lineNumber: 217,
+          columnNumber: 15
+        }, this) : null
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 152,
+        columnNumber: 13
+      }, this) }, void 0, false, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+        lineNumber: 140,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+      lineNumber: 107,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+      lineNumber: 106,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx",
+    lineNumber: 95,
+    columnNumber: 5
+  }, this);
+}
+_s(ContactExperience, "nE8jBdxRr+OoQVAad94u2Rs95cU=");
+_c = ContactExperience;
+var _c;
+$RefreshReg$(_c, "ContactExperience");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "E:/All DOCS/LIFE_OXI/src/sections/ContactExperience.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBZ0dBOztBQWhHQSxTQUFBQSxTQUFBQyxnQkFBQTtBQUNBLFNBQUFDLE1BQUFDLFFBQUFDLGVBQUFDLE9BQUFDLFlBQUE7QUFDQSxPQUFBQyxtQkFBQTtBQUNBLE9BQUFDLG1CQUFBO0FBQ0EsU0FBQUMsU0FBQUMsZ0JBQUE7QUFjQSxNQUFBQyxpQkFBQTtBQUFBLEVBQ0FDLE1BQUE7QUFBQSxFQUNBQyxVQUFBO0FBQUEsRUFDQUMsT0FBQTtBQUFBLEVBQ0FDLE9BQUE7QUFBQSxFQUNBQyxTQUFBO0FBQUEsRUFDQUMsTUFBQTtBQUFBLEVBQ0FDLFNBQUE7QUFDQTtBQUVBLFNBQUFDLGdCQUFBQyxVQUFBO0FBQ0E7QUFBQSxJQUNBUixNQUFBUyxPQUFBRCxTQUFBRSxJQUFBO0FBQUEsSUFDQVQsVUFBQVEsT0FBQUQsU0FBQUUsSUFBQTtBQUFBLElBQ0FSLE9BQUFPLE9BQUFELFNBQUFFLElBQUE7QUFBQSxJQUNBUCxPQUFBTSxPQUFBRCxTQUFBRSxJQUFBO0FBQUEsSUFDQU4sU0FBQUssT0FBQUQsU0FBQUUsSUFBQTtBQUFBLElBQ0FMLE1BQUFJLE9BQUFELFNBQUFFLElBQUE7QUFBQSxJQUNBSixTQUFBRyxPQUFBRCxTQUFBRSxJQUFBO0FBQUEsRUFDQTtBQUNBO0FBRUEsU0FBQUMsaUJBQUFDLFNBQUE7QUFDQTtBQUFBLElBQ0EsU0FBQUEsUUFBQVosSUFBQTtBQUFBLElBQ0EsYUFBQVksUUFBQVgsUUFBQTtBQUFBLElBQ0EsVUFBQVcsUUFBQVYsS0FBQTtBQUFBLElBQ0EsVUFBQVUsUUFBQVQsS0FBQTtBQUFBLElBQ0EsWUFBQVMsUUFBQVIsT0FBQTtBQUFBLElBQ0EsY0FBQVEsUUFBQVAsUUFBQTtBQUFBLElBQ0E7QUFBQSxJQUNBTyxRQUFBTixXQUFBO0FBQUEsSUFDQU8sS0FBQTtBQUNBO0FBRUEsd0JBQUFDLG9CQUFBO0FBQUFDLEtBQUE7QUFDQSxTQUFBQyxPQUFBQyxRQUFBLElBQUE1QixTQUFBO0FBQ0EsU0FBQXVCLFNBQUFNLFVBQUEsSUFBQTdCLFNBQUFVLGNBQUE7QUFDQSxRQUFBb0IsV0FBQUMsWUFBQUMsSUFBQUM7QUFFQSxRQUFBQyxpQkFBQW5DLFFBQUEsTUFBQW9DLG1CQUFBYixpQkFBQUMsT0FBQSxLQUFBQSxPQUFBO0FBQ0EsUUFBQWEsWUFBQSxVQUFBNUIsUUFBQUssS0FBQSxZQUFBc0IsbUJBQUEsb0NBQUFELGNBQUE7QUFDQSxRQUFBRyxlQUFBLGlCQUFBN0IsUUFBQThCLFFBQUEsU0FBQUosY0FBQTtBQUVBLGlCQUFBSyxhQUFBQyxPQUFBO0FBQ0FBLFVBQUFDLGVBQUE7QUFDQSxVQUFBQyxPQUFBRixNQUFBRztBQUNBLFVBQUF4QixXQUFBLElBQUF5QixTQUFBRixJQUFBO0FBQ0EsVUFBQUcsY0FBQTNCLGdCQUFBQyxRQUFBO0FBQ0FVLGVBQUFnQixXQUFBO0FBRUEsU0FBQWYsVUFBQTtBQUNBRixlQUFBO0FBQ0E7QUFBQSxJQUNBO0FBRUFBLGFBQUE7QUFDQTtBQUNBLFlBQUFrQixXQUFBLE1BQUFDLE1BQUFqQixVQUFBO0FBQUEsUUFDQWtCLFFBQUE7QUFBQSxRQUNBQyxTQUFBLEVBQUFDLFFBQUE7QUFBQSxRQUNBQyxNQUFBaEM7QUFBQUEsTUFDQTtBQUVBLFdBQUEyQixTQUFBTSxJQUFBO0FBQ0Esa0JBQUFDLE1BQUE7QUFBQSxNQUNBO0FBRUF6QixlQUFBO0FBQ0FjLFdBQUFZLE1BQUE7QUFBQSxJQUNBO0FBQ0ExQixlQUFBO0FBQUEsSUFDQTtBQUFBLEVBQ0E7QUFFQSxTQUNBLDhGQUFZLDJGQUNaO0FBQUEsOEZBQVUsK0JBQ1Y7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFVBQ0E7QUFBQSxVQUNBO0FBQUEsVUFDQTtBQUFBLFVBQ0E7QUFBQTtBQUFBLFFBSkE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLE1BSUE7QUFBQSxNQUVBLDJGQUFZLDRHQUFaO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBWTtBQUFBLFNBUFo7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQVFBO0FBQUEsSUFFQSwyRkFBVSwwQ0FDVixxR0FBWSxzRUFDWjtBQUFBLGtHQUFjLGtDQUNkO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxZQUNBO0FBQUEsWUFDQTtBQUFBLFlBQ0E7QUFBQTtBQUFBLFVBSEE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFFBR0E7QUFBQSxRQUdBLDRGQUFnQixtREFDaEI7QUFBQSxvR0FBZ0IsaUJBQUFwQixRQUFBK0MsT0FBQSxHQUFBQyxNQUFBLGlDQUNoQjtBQUFBLHdHQUFzQixZQUF0QjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFzQjtBQUFBLFlBQ3RCLDZGQUFxQmhELGtCQUFBK0MsT0FBQS9CLEtBQUEsVUFBckI7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFBcUI7QUFBQSxlQUZyQjtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUdBO0FBQUEsVUFDQSwwRkFBZ0IsZ0JBQUFoQixRQUFBSyxLQUFBLCtCQUNoQjtBQUFBLHVHQUFxQixZQUFyQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFxQjtBQUFBLFlBQ3JCLDZGQUFxQkwsa0JBQUFLLFNBQXJCO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBQXFCO0FBQUEsZUFGckI7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFHQTtBQUFBLFVBQ0EsNEZBQWtCLDJCQUNsQjtBQUFBLHlHQUF1QixZQUF2QjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUF1QjtBQUFBLFlBQ3ZCLDZGQUFxQkwsa0JBQUFpRCxZQUFyQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFxQjtBQUFBLGVBRnJCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0E7QUFBQSxhQVpBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFhQTtBQUFBLFFBRUEsNEZBQWdCLG9GQUNoQjtBQUFBLDhHQUE0QixNQUFBcEIsY0FBQSxnR0FBNUI7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFFQTtBQUFBLFVBQ0Esb0dBQTRCLE1BQUFELFdBQUEsdURBQTVCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBRUE7QUFBQSxhQU5BO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFPQTtBQUFBLFdBN0JBO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUE4QkE7QUFBQSxNQUVBLDRGQUFjLGtIQUNkVCxvQkFBQSxTQUNBLDRGQUFrQixnRUFDbEIsc0dBQ0E7QUFBQSxtR0FBdUIsd0VBQXZCO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBdUI7QUFBQSxRQUN2QiwyRkFBcUIsbUZBQXJCO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBcUI7QUFBQSxRQUNyQiwwRkFBb0IsNEpBQXBCO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFFQTtBQUFBLFdBTEE7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQU1BLEtBUEE7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQVFBLElBRUEsNkZBQW1CLFVBQUFZLGNBQUEsd0JBQ25CO0FBQUEsb0dBQW9CLHdDQUNwQjtBQUFBLHdHQUF3QjtBQUFBO0FBQUEsWUFFeEIsOEZBQTBCLG9GQUExQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUEwQjtBQUFBLGVBRjFCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0E7QUFBQSxVQUNBLDhGQUF3QjtBQUFBO0FBQUEsWUFFeEIsOEZBQTBCLHVHQUExQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUEwQjtBQUFBLGVBRjFCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0E7QUFBQSxhQVJBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFTQTtBQUFBLFFBRUEsNEZBQW9CLHdDQUNwQjtBQUFBLHdHQUF3QjtBQUFBO0FBQUEsWUFFeEIsOEZBQTBCLDRHQUExQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUEwQjtBQUFBLGVBRjFCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0E7QUFBQSxVQUNBLDhGQUF3QjtBQUFBO0FBQUEsWUFFeEIsOEZBQTBCLGtGQUExQjtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUEwQjtBQUFBLGVBRjFCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBR0E7QUFBQSxhQVJBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFTQTtBQUFBLFFBRUEsNEZBQW9CLHdDQUNwQjtBQUFBLHdHQUF3QjtBQUFBO0FBQUEsWUFFeEIsK0ZBQTJCLHlEQUFBN0IsZUFBQUssU0FDM0JOLG1CQUFBaUQ7QUFBQUEsY0FBQSxDQUFBM0MsWUFDQSwrRkFBK0JBLGtCQUFBNEMsU0FBQTVDLFFBQUE0QyxPQUEvQjtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUErQjtBQUFBLFlBQy9CLEtBSEE7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFJQTtBQUFBLGVBTkE7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFPQTtBQUFBLFVBQ0EsOEZBQXdCO0FBQUE7QUFBQSxZQUV4QiwrRkFBMkIsMERBQzNCO0FBQUEsNkdBQTZCLHVDQUE3QjtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUE2QjtBQUFBLGNBQzdCLCtGQUE2Qix3QkFBN0I7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBNkI7QUFBQSxjQUM3QiwrRkFBNkIsc0JBQTdCO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBQTZCO0FBQUEsY0FDN0IsK0ZBQTZCLHVCQUE3QjtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUE2QjtBQUFBLGNBQzdCLCtGQUE2Qix1QkFBN0I7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBNkI7QUFBQSxjQUM3QiwrRkFBNkIsb0JBQTdCO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBQTZCO0FBQUEsaUJBTjdCO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBT0E7QUFBQSxlQVRBO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBVUE7QUFBQSxhQW5CQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBb0JBO0FBQUEsUUFFQSw4RkFBc0I7QUFBQTtBQUFBLFVBRXRCO0FBQUE7QUFBQTtBQUFBO0FBQUEsY0FDQTtBQUFBLGNBQ0E7QUFBQSxjQUNBO0FBQUEsY0FDQTtBQUFBO0FBQUEsWUFKQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsVUFJQTtBQUFBLGFBTkE7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQVFBO0FBQUEsUUFFQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFlBQ0E7QUFBQSxZQUNBLFVBQUFoQyxVQUFBO0FBQUEsWUFDQTtBQUFBLFlBRUE7QUFBQSx5R0FBdUIsWUFBdkI7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBdUI7QUFBQSxjQUN2QkEsVUFBQTtBQUFBO0FBQUE7QUFBQSxVQU5BO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxRQU9BO0FBQUEsUUFFQUEsVUFBQSxjQUFBQSxVQUFBLFVBQ0EsNEZBQXNCLDZEQUN0QjtBQUFBLG9HQUFzQiw4Q0FDdEJBLG9CQUFBLGFBQ0EscUdBQ0EsNEZBSEE7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFJQTtBQUFBLFVBQ0EsNEZBQXdCLG1EQUN4QjtBQUFBLHNHQUF3QixNQUFBVSxjQUFBLG1FQUN4QjtBQUFBLGtIQUFzQyxZQUF0QztBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUFzQztBQUFBO0FBQUEsaUJBRHRDO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBR0E7QUFBQSxZQUNBLDBGQUF3QixNQUFBRCxXQUFBLDhCQUN4QjtBQUFBLHlHQUE2QixZQUE3QjtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUE2QjtBQUFBO0FBQUEsaUJBRDdCO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBR0E7QUFBQSxlQVJBO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBU0E7QUFBQSxhQWZBO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFnQkEsSUFDQTtBQUFBLFdBbEZBO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFtRkEsS0EvRkE7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQWlHQTtBQUFBLFNBbElBO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FtSUEsS0FwSUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQXFJQTtBQUFBLE9BaEpBO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FpSkE7QUFFQTtBQUFBVixHQTVMQUQsbUJBQUE7QUFBQSxLQUFBQTtBQUFBLElBQUFtQztBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJ1c2VNZW1vIiwidXNlU3RhdGUiLCJNYWlsIiwiTWFwUGluIiwiTWVzc2FnZUNpcmNsZSIsIlBob25lIiwiU2VuZCIsIlNlY3Rpb25IZWFkZXIiLCJQcmVtaXVtQnV0dG9uIiwiY29udGFjdCIsInNlcnZpY2VzIiwiZGVmYXVsdElucXVpcnkiLCJuYW1lIiwiZmFjaWxpdHkiLCJlbWFpbCIsInBob25lIiwic2VydmljZSIsImJlZHMiLCJtZXNzYWdlIiwiaW5xdWlyeUZyb21Gb3JtIiwiZm9ybURhdGEiLCJTdHJpbmciLCJnZXQiLCJidWlsZElucXVpcnlUZXh0IiwiaW5xdWlyeSIsImpvaW4iLCJDb250YWN0RXhwZXJpZW5jZSIsIl9zIiwic3RhdGUiLCJzZXRTdGF0ZSIsInNldElucXVpcnkiLCJlbmRwb2ludCIsImltcG9ydCIsImVudiIsIlZJVEVfRk9STVNQUkVFX0VORFBPSU5UIiwiZW5jb2RlZElucXVpcnkiLCJlbmNvZGVVUklDb21wb25lbnQiLCJlbWFpbEhyZWYiLCJ3aGF0c2FwcEhyZWYiLCJ3aGF0c2FwcCIsImhhbmRsZVN1Ym1pdCIsImV2ZW50IiwicHJldmVudERlZmF1bHQiLCJmb3JtIiwiY3VycmVudFRhcmdldCIsIkZvcm1EYXRhIiwibmV4dElucXVpcnkiLCJyZXNwb25zZSIsImZldGNoIiwibWV0aG9kIiwiaGVhZGVycyIsIkFjY2VwdCIsImJvZHkiLCJvayIsIkVycm9yIiwicmVzZXQiLCJwaG9uZXMiLCJzbGljZSIsImxvY2F0aW9uIiwibWFwIiwidGl0bGUiLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJDb250YWN0RXhwZXJpZW5jZS50c3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlTWVtbywgdXNlU3RhdGUsIHR5cGUgRm9ybUV2ZW50IH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBNYWlsLCBNYXBQaW4sIE1lc3NhZ2VDaXJjbGUsIFBob25lLCBTZW5kIH0gZnJvbSAnbHVjaWRlLXJlYWN0J1xuaW1wb3J0IFNlY3Rpb25IZWFkZXIgZnJvbSAnQC9jb21wb25lbnRzL1NlY3Rpb25IZWFkZXInXG5pbXBvcnQgUHJlbWl1bUJ1dHRvbiBmcm9tICdAL2NvbXBvbmVudHMvUHJlbWl1bUJ1dHRvbidcbmltcG9ydCB7IGNvbnRhY3QsIHNlcnZpY2VzIH0gZnJvbSAnQC9kYXRhL3NpdGUnXG5cbnR5cGUgU3VibWl0U3RhdGUgPSAnaWRsZScgfCAnc2VuZGluZycgfCAnc2VudCcgfCAnZmFsbGJhY2snIHwgJ2Vycm9yJ1xuXG50eXBlIElucXVpcnkgPSB7XG4gIG5hbWU6IHN0cmluZ1xuICBmYWNpbGl0eTogc3RyaW5nXG4gIGVtYWlsOiBzdHJpbmdcbiAgcGhvbmU6IHN0cmluZ1xuICBzZXJ2aWNlOiBzdHJpbmdcbiAgYmVkczogc3RyaW5nXG4gIG1lc3NhZ2U6IHN0cmluZ1xufVxuXG5jb25zdCBkZWZhdWx0SW5xdWlyeTogSW5xdWlyeSA9IHtcbiAgbmFtZTogJycsXG4gIGZhY2lsaXR5OiAnJyxcbiAgZW1haWw6ICcnLFxuICBwaG9uZTogJycsXG4gIHNlcnZpY2U6ICdNZWRpY2FsIEdhcyBQaXBlbGluZSBTeXN0ZW1zJyxcbiAgYmVkczogJycsXG4gIG1lc3NhZ2U6ICcnLFxufVxuXG5mdW5jdGlvbiBpbnF1aXJ5RnJvbUZvcm0oZm9ybURhdGE6IEZvcm1EYXRhKTogSW5xdWlyeSB7XG4gIHJldHVybiB7XG4gICAgbmFtZTogU3RyaW5nKGZvcm1EYXRhLmdldCgnbmFtZScpIHx8ICcnKSxcbiAgICBmYWNpbGl0eTogU3RyaW5nKGZvcm1EYXRhLmdldCgnZmFjaWxpdHknKSB8fCAnJyksXG4gICAgZW1haWw6IFN0cmluZyhmb3JtRGF0YS5nZXQoJ2VtYWlsJykgfHwgJycpLFxuICAgIHBob25lOiBTdHJpbmcoZm9ybURhdGEuZ2V0KCdwaG9uZScpIHx8ICcnKSxcbiAgICBzZXJ2aWNlOiBTdHJpbmcoZm9ybURhdGEuZ2V0KCdzZXJ2aWNlJykgfHwgJycpLFxuICAgIGJlZHM6IFN0cmluZyhmb3JtRGF0YS5nZXQoJ2JlZHMnKSB8fCAnJyksXG4gICAgbWVzc2FnZTogU3RyaW5nKGZvcm1EYXRhLmdldCgnbWVzc2FnZScpIHx8ICcnKSxcbiAgfVxufVxuXG5mdW5jdGlvbiBidWlsZElucXVpcnlUZXh0KGlucXVpcnk6IElucXVpcnkpIHtcbiAgcmV0dXJuIFtcbiAgICBgTmFtZTogJHtpbnF1aXJ5Lm5hbWV9YCxcbiAgICBgRmFjaWxpdHk6ICR7aW5xdWlyeS5mYWNpbGl0eX1gLFxuICAgIGBFbWFpbDogJHtpbnF1aXJ5LmVtYWlsfWAsXG4gICAgYFBob25lOiAke2lucXVpcnkucGhvbmV9YCxcbiAgICBgU2VydmljZTogJHtpbnF1aXJ5LnNlcnZpY2V9YCxcbiAgICBgQmVkIGNvdW50OiAke2lucXVpcnkuYmVkcyB8fCAnTm90IHNwZWNpZmllZCd9YCxcbiAgICAnJyxcbiAgICBpbnF1aXJ5Lm1lc3NhZ2UgfHwgJ1BsZWFzZSBjb250YWN0IG1lIGZvciBhbiBlbmdpbmVlcmluZyByZXZpZXcuJyxcbiAgXS5qb2luKCdcXG4nKVxufVxuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDb250YWN0RXhwZXJpZW5jZSgpIHtcbiAgY29uc3QgW3N0YXRlLCBzZXRTdGF0ZV0gPSB1c2VTdGF0ZTxTdWJtaXRTdGF0ZT4oJ2lkbGUnKVxuICBjb25zdCBbaW5xdWlyeSwgc2V0SW5xdWlyeV0gPSB1c2VTdGF0ZTxJbnF1aXJ5PihkZWZhdWx0SW5xdWlyeSlcbiAgY29uc3QgZW5kcG9pbnQgPSBpbXBvcnQubWV0YS5lbnYuVklURV9GT1JNU1BSRUVfRU5EUE9JTlQgYXMgc3RyaW5nIHwgdW5kZWZpbmVkXG5cbiAgY29uc3QgZW5jb2RlZElucXVpcnkgPSB1c2VNZW1vKCgpID0+IGVuY29kZVVSSUNvbXBvbmVudChidWlsZElucXVpcnlUZXh0KGlucXVpcnkpKSwgW2lucXVpcnldKVxuICBjb25zdCBlbWFpbEhyZWYgPSBgbWFpbHRvOiR7Y29udGFjdC5lbWFpbH0/c3ViamVjdD0ke2VuY29kZVVSSUNvbXBvbmVudCgnTE9NRSBlbmdpbmVlcmluZyBpbnF1aXJ5Jyl9JmJvZHk9JHtlbmNvZGVkSW5xdWlyeX1gXG4gIGNvbnN0IHdoYXRzYXBwSHJlZiA9IGBodHRwczovL3dhLm1lLyR7Y29udGFjdC53aGF0c2FwcH0/dGV4dD0ke2VuY29kZWRJbnF1aXJ5fWBcblxuICBhc3luYyBmdW5jdGlvbiBoYW5kbGVTdWJtaXQoZXZlbnQ6IEZvcm1FdmVudDxIVE1MRm9ybUVsZW1lbnQ+KSB7XG4gICAgZXZlbnQucHJldmVudERlZmF1bHQoKVxuICAgIGNvbnN0IGZvcm0gPSBldmVudC5jdXJyZW50VGFyZ2V0XG4gICAgY29uc3QgZm9ybURhdGEgPSBuZXcgRm9ybURhdGEoZm9ybSlcbiAgICBjb25zdCBuZXh0SW5xdWlyeSA9IGlucXVpcnlGcm9tRm9ybShmb3JtRGF0YSlcbiAgICBzZXRJbnF1aXJ5KG5leHRJbnF1aXJ5KVxuXG4gICAgaWYgKCFlbmRwb2ludCkge1xuICAgICAgc2V0U3RhdGUoJ2ZhbGxiYWNrJylcbiAgICAgIHJldHVyblxuICAgIH1cblxuICAgIHNldFN0YXRlKCdzZW5kaW5nJylcbiAgICB0cnkge1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChlbmRwb2ludCwge1xuICAgICAgICBtZXRob2Q6ICdQT1NUJyxcbiAgICAgICAgaGVhZGVyczogeyBBY2NlcHQ6ICdhcHBsaWNhdGlvbi9qc29uJyB9LFxuICAgICAgICBib2R5OiBmb3JtRGF0YSxcbiAgICAgIH0pXG5cbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKCdGb3JtIHN1Ym1pc3Npb24gZmFpbGVkJylcbiAgICAgIH1cblxuICAgICAgc2V0U3RhdGUoJ3NlbnQnKVxuICAgICAgZm9ybS5yZXNldCgpXG4gICAgfSBjYXRjaCB7XG4gICAgICBzZXRTdGF0ZSgnZXJyb3InKVxuICAgIH1cbiAgfVxuXG4gIHJldHVybiAoXG4gICAgPHNlY3Rpb24gaWQ9XCJjb250YWN0XCIgY2xhc3NOYW1lPVwicmVsYXRpdmUgb3ZlcmZsb3ctaGlkZGVuIGJnLWluay05NTAgcHktMjQgdGV4dC13aGl0ZSBzbTpweS0zMlwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wXCI+XG4gICAgICAgIDxpbWdcbiAgICAgICAgICBzcmM9XCIvaW1hZ2VzL294eWdlbi1hYnN0cmFjdC5qcGdcIlxuICAgICAgICAgIGFsdD1cIlwiXG4gICAgICAgICAgY2xhc3NOYW1lPVwiaC1mdWxsIHctZnVsbCBvYmplY3QtY292ZXIgb3BhY2l0eS1bMC4xMl1cIlxuICAgICAgICAgIGxvYWRpbmc9XCJsYXp5XCJcbiAgICAgICAgLz5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIGJnLVtsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCMwMTA4MGFfMCUscmdiYSgxLDgsMTAsMC44OClfNDYlLCMwMTA4MGFfMTAwJSldXCIgLz5cbiAgICAgIDwvZGl2PlxuXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNlY3Rpb24tc2hlbGwgcmVsYXRpdmUgei0xMFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ2FwLTEyIGxnOmdyaWQtY29scy1bMC44OGZyXzEuMTJmcl0gbGc6aXRlbXMtc3RhcnRcIj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImxnOnN0aWNreSBsZzp0b3AtMjhcIj5cbiAgICAgICAgICAgIDxTZWN0aW9uSGVhZGVyXG4gICAgICAgICAgICAgIGV5ZWJyb3c9XCJDb250YWN0IGV4cGVyaWVuY2VcIlxuICAgICAgICAgICAgICB0aXRsZT1cIlNlbmQgdGhlIGRyYXdpbmdzLiBXZSB3aWxsIGVuZ2luZWVyIHRoZSBveHlnZW4gYmFja2JvbmUuXCJcbiAgICAgICAgICAgICAgY29weT1cIlNoYXJlIHlvdXIgZmFjaWxpdHkgbmFtZSwgYmVkIGNvdW50LCBjbGluaWNhbCB6b25lcywgYW5kIHRhcmdldCBzeXN0ZW0uIExPTUUgd2lsbCByZXNwb25kIHdpdGggdGhlIHJpZ2h0IHRlY2huaWNhbCBwYXRoLlwiXG4gICAgICAgICAgICAvPlxuXG4gICAgICAgICAgICA8ZGl2IGRhdGEtcmV2ZWFsIGNsYXNzTmFtZT1cIm10LTEwIHNwYWNlLXktNFwiPlxuICAgICAgICAgICAgICA8YSBocmVmPXtgdGVsOisyMzMke2NvbnRhY3QucGhvbmVzWzBdLnNsaWNlKDEpfWB9IGNsYXNzTmFtZT1cImNvbnRhY3QtbGluZVwiPlxuICAgICAgICAgICAgICAgIDxQaG9uZSBzaXplPXsxOH0gLz5cbiAgICAgICAgICAgICAgICA8c3Bhbj57Y29udGFjdC5waG9uZXMuam9pbignIC8gJyl9PC9zcGFuPlxuICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgIDxhIGhyZWY9e2BtYWlsdG86JHtjb250YWN0LmVtYWlsfWB9IGNsYXNzTmFtZT1cImNvbnRhY3QtbGluZVwiPlxuICAgICAgICAgICAgICAgIDxNYWlsIHNpemU9ezE4fSAvPlxuICAgICAgICAgICAgICAgIDxzcGFuPntjb250YWN0LmVtYWlsfTwvc3Bhbj5cbiAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhY3QtbGluZVwiPlxuICAgICAgICAgICAgICAgIDxNYXBQaW4gc2l6ZT17MTh9IC8+XG4gICAgICAgICAgICAgICAgPHNwYW4+e2NvbnRhY3QubG9jYXRpb259PC9zcGFuPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2IGRhdGEtcmV2ZWFsIGNsYXNzTmFtZT1cIm10LTggZmxleCBmbGV4LWNvbCBnYXAtMyBzbTpmbGV4LXJvdyBsZzpmbGV4LWNvbFwiPlxuICAgICAgICAgICAgICA8UHJlbWl1bUJ1dHRvbiBocmVmPXt3aGF0c2FwcEhyZWZ9IHRhcmdldD1cIl9ibGFua1wiIHJlbD1cIm5vcmVmZXJyZXJcIiB2YXJpYW50PVwiZ2hvc3RcIj5cbiAgICAgICAgICAgICAgICBXaGF0c0FwcCBlbmdpbmVlcmluZyBkZXNrXG4gICAgICAgICAgICAgIDwvUHJlbWl1bUJ1dHRvbj5cbiAgICAgICAgICAgICAgPFByZW1pdW1CdXR0b24gaHJlZj17ZW1haWxIcmVmfSB2YXJpYW50PVwiZ2hvc3RcIj5cbiAgICAgICAgICAgICAgICBFbWFpbCBwcm9qZWN0IGRldGFpbHNcbiAgICAgICAgICAgICAgPC9QcmVtaXVtQnV0dG9uPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2IGRhdGEtcmV2ZWFsIGNsYXNzTmFtZT1cImJvcmRlciBib3JkZXItd2hpdGUvMTAgYmctd2hpdGUvWzAuMDM1XSBwLTUgc2hhZG93LTJ4bCBiYWNrZHJvcC1ibHVyLXhsIHNtOnAtOFwiPlxuICAgICAgICAgICAge3N0YXRlID09PSAnc2VudCcgPyAoXG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBtaW4taC1bMzJyZW1dIHBsYWNlLWl0ZW1zLWNlbnRlciB0ZXh0LWNlbnRlclwiPlxuICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICA8U2VuZCBjbGFzc05hbWU9XCJteC1hdXRvIG1iLTYgdGV4dC1icmFuZC0yMDBcIiBzaXplPXs0Mn0gc3Ryb2tlV2lkdGg9ezEuNX0gLz5cbiAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJmb250LWRpc3BsYXkgdGV4dC00eGwgZm9udC1zZW1pYm9sZFwiPklucXVpcnkgcmVjZWl2ZWQuPC9oMz5cbiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm14LWF1dG8gbXQtNCBtYXgtdy1tZCB0ZXh0LXNhZ2UtMTAwLzgwXCI+XG4gICAgICAgICAgICAgICAgICAgIFRoZSBlbmdpbmVlcmluZyB0ZWFtIHdpbGwgcmV2aWV3IHlvdXIgcmVxdWVzdCBhbmQgcmVzcG9uZCB3aXRoIHRoZSBuZXh0IHRlY2huaWNhbCBzdGVwLlxuICAgICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9IGNsYXNzTmFtZT1cInNwYWNlLXktNVwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBnYXAtNSBzbTpncmlkLWNvbHMtMlwiPlxuICAgICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cImZpZWxkLWxhYmVsXCI+XG4gICAgICAgICAgICAgICAgICAgIEZ1bGwgbmFtZVxuICAgICAgICAgICAgICAgICAgICA8aW5wdXQgbmFtZT1cIm5hbWVcIiByZXF1aXJlZCBjbGFzc05hbWU9XCJmaWVsZC1pbnB1dFwiIHBsYWNlaG9sZGVyPVwiWW91ciBuYW1lXCIgLz5cbiAgICAgICAgICAgICAgICAgIDwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwiZmllbGQtbGFiZWxcIj5cbiAgICAgICAgICAgICAgICAgICAgRmFjaWxpdHlcbiAgICAgICAgICAgICAgICAgICAgPGlucHV0IG5hbWU9XCJmYWNpbGl0eVwiIHJlcXVpcmVkIGNsYXNzTmFtZT1cImZpZWxkLWlucHV0XCIgcGxhY2Vob2xkZXI9XCJIb3NwaXRhbCBvciBwcm9qZWN0IG5hbWVcIiAvPlxuICAgICAgICAgICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBnYXAtNSBzbTpncmlkLWNvbHMtMlwiPlxuICAgICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cImZpZWxkLWxhYmVsXCI+XG4gICAgICAgICAgICAgICAgICAgIEVtYWlsXG4gICAgICAgICAgICAgICAgICAgIDxpbnB1dCBuYW1lPVwiZW1haWxcIiB0eXBlPVwiZW1haWxcIiByZXF1aXJlZCBjbGFzc05hbWU9XCJmaWVsZC1pbnB1dFwiIHBsYWNlaG9sZGVyPVwibmFtZUBmYWNpbGl0eS5jb21cIiAvPlxuICAgICAgICAgICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICAgICAgICAgIDxsYWJlbCBjbGFzc05hbWU9XCJmaWVsZC1sYWJlbFwiPlxuICAgICAgICAgICAgICAgICAgICBQaG9uZVxuICAgICAgICAgICAgICAgICAgICA8aW5wdXQgbmFtZT1cInBob25lXCIgcmVxdWlyZWQgY2xhc3NOYW1lPVwiZmllbGQtaW5wdXRcIiBwbGFjZWhvbGRlcj1cIjAyNC4uLlwiIC8+XG4gICAgICAgICAgICAgICAgICA8L2xhYmVsPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdhcC01IHNtOmdyaWQtY29scy0yXCI+XG4gICAgICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwiZmllbGQtbGFiZWxcIj5cbiAgICAgICAgICAgICAgICAgICAgU3lzdGVtIHByaW9yaXR5XG4gICAgICAgICAgICAgICAgICAgIDxzZWxlY3QgbmFtZT1cInNlcnZpY2VcIiBjbGFzc05hbWU9XCJmaWVsZC1pbnB1dFwiIGRlZmF1bHRWYWx1ZT17ZGVmYXVsdElucXVpcnkuc2VydmljZX0+XG4gICAgICAgICAgICAgICAgICAgICAge3NlcnZpY2VzLm1hcCgoc2VydmljZSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbiBrZXk9e3NlcnZpY2UudGl0bGV9PntzZXJ2aWNlLnRpdGxlfTwvb3B0aW9uPlxuICAgICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD5cbiAgICAgICAgICAgICAgICAgIDwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwiZmllbGQtbGFiZWxcIj5cbiAgICAgICAgICAgICAgICAgICAgQmVkIGNvdW50XG4gICAgICAgICAgICAgICAgICAgIDxzZWxlY3QgbmFtZT1cImJlZHNcIiBjbGFzc05hbWU9XCJmaWVsZC1pbnB1dFwiIGRlZmF1bHRWYWx1ZT1cIlwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9XCJcIj5TZWxlY3QgcmFuZ2U8L29wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uPlVuZGVyIDUwPC9vcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbj41MC0xMDA8L29wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uPjEwMC0yMDA8L29wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uPjIwMC01MDA8L29wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uPjUwMCs8L29wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgPC9zZWxlY3Q+XG4gICAgICAgICAgICAgICAgICA8L2xhYmVsPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cImZpZWxkLWxhYmVsXCI+XG4gICAgICAgICAgICAgICAgICBQcm9qZWN0IGJyaWVmXG4gICAgICAgICAgICAgICAgICA8dGV4dGFyZWFcbiAgICAgICAgICAgICAgICAgICAgbmFtZT1cIm1lc3NhZ2VcIlxuICAgICAgICAgICAgICAgICAgICByb3dzPXs2fVxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmaWVsZC1pbnB1dCByZXNpemUtbm9uZVwiXG4gICAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwiVGVsbCB1cyBhYm91dCB0aGUgZmFjaWxpdHksIGN1cnJlbnQgb3h5Z2VuIHNldHVwLCBkcmF3aW5ncywgd2FyZHMsIHRoZWF0cmVzLCBJQ1Ugem9uZXMsIG9yIGVtZXJnZW5jeSBuZWVkcy5cIlxuICAgICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICA8L2xhYmVsPlxuXG4gICAgICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICAgICAgdHlwZT1cInN1Ym1pdFwiXG4gICAgICAgICAgICAgICAgICBkaXNhYmxlZD17c3RhdGUgPT09ICdzZW5kaW5nJ31cbiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImlubGluZS1mbGV4IG1pbi1oLVszLjI1cmVtXSB3LWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGdhcC0zIHJvdW5kZWQtZnVsbCBiZy1icmFuZC01MDAgcHgtNiB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZSB0cmFuc2l0aW9uIGR1cmF0aW9uLTMwMCBob3ZlcjpiZy1icmFuZC00MDAgZGlzYWJsZWQ6Y3Vyc29yLXdhaXQgZGlzYWJsZWQ6b3BhY2l0eS03MFwiXG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPFNlbmQgc2l6ZT17MTZ9IC8+XG4gICAgICAgICAgICAgICAgICB7c3RhdGUgPT09ICdzZW5kaW5nJyA/ICdTdWJtaXR0aW5nIGlucXVpcnknIDogJ1N1Ym1pdCBlbmdpbmVlcmluZyBpbnF1aXJ5J31cbiAgICAgICAgICAgICAgICA8L2J1dHRvbj5cblxuICAgICAgICAgICAgICAgIHtzdGF0ZSA9PT0gJ2ZhbGxiYWNrJyB8fCBzdGF0ZSA9PT0gJ2Vycm9yJyA/IChcbiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYm9yZGVyIGJvcmRlci1icmFuZC0zMDAvMzAgYmctYnJhbmQtNTAwLzEwIHAtNVwiPlxuICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LXNtIGxlYWRpbmctNiB0ZXh0LXNhZ2UtMTAwXCI+XG4gICAgICAgICAgICAgICAgICAgICAge3N0YXRlID09PSAnZmFsbGJhY2snXG4gICAgICAgICAgICAgICAgICAgICAgICA/ICdBIEZvcm1zcHJlZSBlbmRwb2ludCBpcyBub3QgY29uZmlndXJlZCB5ZXQuIFNlbmQgdGhlIHNhbWUgaW5xdWlyeSB0aHJvdWdoIFdoYXRzQXBwIG9yIGVtYWlsIG5vdy4nXG4gICAgICAgICAgICAgICAgICAgICAgICA6ICdUaGUgZm9ybSBlbmRwb2ludCBkaWQgbm90IHJlc3BvbmQuIFNlbmQgdGhlIGlucXVpcnkgdGhyb3VnaCBXaGF0c0FwcCBvciBlbWFpbCBpbnN0ZWFkLid9XG4gICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC00IGZsZXggZmxleC1jb2wgZ2FwLTMgc206ZmxleC1yb3dcIj5cbiAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPXt3aGF0c2FwcEhyZWZ9IHRhcmdldD1cIl9ibGFua1wiIHJlbD1cIm5vcmVmZXJyZXJcIiBjbGFzc05hbWU9XCJmYWxsYmFjay1hY3Rpb25cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxNZXNzYWdlQ2lyY2xlIHNpemU9ezE2fSAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgV2hhdHNBcHBcbiAgICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj17ZW1haWxIcmVmfSBjbGFzc05hbWU9XCJmYWxsYmFjay1hY3Rpb25cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxNYWlsIHNpemU9ezE2fSAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgRW1haWxcbiAgICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgKSA6IG51bGx9XG4gICAgICAgICAgICAgIDwvZm9ybT5cbiAgICAgICAgICAgICl9XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgPC9zZWN0aW9uPlxuICApXG59XG4iXSwiZmlsZSI6IkU6L0FsbCBET0NTL0xJRkVfT1hJL3NyYy9zZWN0aW9ucy9Db250YWN0RXhwZXJpZW5jZS50c3gifQ==

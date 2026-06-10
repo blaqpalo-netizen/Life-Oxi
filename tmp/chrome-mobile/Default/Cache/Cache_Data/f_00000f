@@ -1,0 +1,223 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/sections/TechnologyInfrastructure.tsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=94cc41bd"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { Cpu, RadioTower, ShieldCheck } from "/node_modules/.vite/deps/lucide-react.js?v=94cc41bd";
+import SectionHeader from "/src/components/SectionHeader.tsx";
+import { infrastructureNodes } from "/src/data/site.ts";
+const principles = [
+  {
+    icon: Cpu,
+    title: "Redundant generation",
+    copy: "PSA oxygen generation should be supported by a secondary manifold so power or mechanical events do not interrupt supply."
+  },
+  {
+    icon: ShieldCheck,
+    title: "Zone-level control",
+    copy: "AVSUs at ICU, neonatal, and theatre entrances let teams isolate one critical area without shutting down the facility."
+  },
+  {
+    icon: RadioTower,
+    title: "Early fault detection",
+    copy: "Real-time pressure and alarm monitoring gives technical teams the information they need before clinical disruption."
+  }
+];
+export default function TechnologyInfrastructure() {
+  return /* @__PURE__ */ jsxDEV("section", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:28:5", id: "technology", className: "relative overflow-hidden bg-ink-950 py-24 sm:py-32", children: /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:29:7", className: "section-shell", children: /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:30:9", className: "grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center", children: [
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:31:11", children: [
+      /* @__PURE__ */ jsxDEV(
+        SectionHeader,
+        {
+          "code-path": "src\\sections\\TechnologyInfrastructure.tsx:32:13",
+          eyebrow: "Technology + infrastructure",
+          title: "The hospital's oxygen vascular system, made visible.",
+          copy: "Central supply moves through main risers and branch lines before reaching AVSU-controlled zones and bedside outlets."
+        },
+        void 0,
+        false,
+        {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+          lineNumber: 32,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:38:13", "data-reveal": true, className: "mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-1", children: principles.map(
+        (principle) => /* @__PURE__ */ jsxDEV("article", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:40:17", className: "flex gap-4 border border-white/10 bg-white/[0.025] p-5", children: [
+          /* @__PURE__ */ jsxDEV(principle.icon, { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:41:19", className: "mt-1 shrink-0 text-brand-200", size: 22, strokeWidth: 1.7 }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+            lineNumber: 41,
+            columnNumber: 19
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:42:19", children: [
+            /* @__PURE__ */ jsxDEV("h3", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:43:21", className: "font-semibold text-white", children: principle.title }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+              lineNumber: 43,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:44:21", className: "mt-2 text-sm leading-6 text-sage-100/75", children: principle.copy }, void 0, false, {
+              fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+              lineNumber: 44,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+            lineNumber: 42,
+            columnNumber: 19
+          }, this)
+        ] }, principle.title, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+          lineNumber: 40,
+          columnNumber: 15
+        }, this)
+      ) }, void 0, false, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+        lineNumber: 38,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+      lineNumber: 31,
+      columnNumber: 11
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:51:11", "data-reveal": true, className: "relative min-h-[38rem] overflow-hidden border border-white/10 bg-white/[0.025] p-5 sm:p-8", children: [
+      /* @__PURE__ */ jsxDEV(
+        "img",
+        {
+          "code-path": "src\\sections\\TechnologyInfrastructure.tsx:52:13",
+          src: "/images/fully installed pipeline.jpg",
+          alt: "",
+          className: "absolute inset-0 h-full w-full object-cover opacity-[0.14]",
+          loading: "lazy"
+        },
+        void 0,
+        false,
+        {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+          lineNumber: 52,
+          columnNumber: 13
+        },
+        this
+      ),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:58:13", className: "absolute inset-0 bg-[linear-gradient(180deg,rgba(1,8,10,0.72)_0%,rgba(1,8,10,0.88)_100%)]" }, void 0, false, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+        lineNumber: 58,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:59:13", className: "relative z-10 flex min-h-[34rem] flex-col justify-between", children: [
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:60:15", children: [
+          /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:61:17", className: "text-sm font-semibold uppercase text-brand-200", children: "Centralized oxygen route" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+            lineNumber: 61,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("p", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:62:17", className: "mt-3 max-w-md text-sm leading-7 text-sage-100/75", children: "Gas-specific routing, color-coded identification, and pressure-balanced branches reduce cross-connection risk and support consistent delivery." }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+            lineNumber: 62,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+          lineNumber: 60,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:68:15", className: "relative mt-8 grid gap-4", children: [
+          /* @__PURE__ */ jsxDEV("div", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:69:17", className: "absolute left-5 top-5 hidden h-[calc(100%-2.5rem)] w-px bg-brand-300/30 sm:block" }, void 0, false, {
+            fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+            lineNumber: 69,
+            columnNumber: 17
+          }, this),
+          infrastructureNodes.map(
+            (node, index) => /* @__PURE__ */ jsxDEV(
+              "div",
+              {
+                "code-path": "src\\sections\\TechnologyInfrastructure.tsx:71:19",
+                className: "relative grid gap-4 rounded-full border border-white/10 bg-ink-950/80 p-3 backdrop-blur-md sm:grid-cols-[2.75rem_1fr]",
+                children: [
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:75:21", className: "relative z-10 grid h-10 w-10 place-items-center rounded-full bg-brand-500 font-display text-sm font-semibold text-white", children: index + 1 }, void 0, false, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+                    lineNumber: 75,
+                    columnNumber: 21
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:78:21", className: "min-w-0 py-1", children: [
+                    /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:79:23", className: "block text-sm font-semibold text-white", children: node.label }, void 0, false, {
+                      fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+                      lineNumber: 79,
+                      columnNumber: 23
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("span", { "code-path": "src\\sections\\TechnologyInfrastructure.tsx:80:23", className: "block text-xs text-sage-300", children: node.meta }, void 0, false, {
+                      fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+                      lineNumber: 80,
+                      columnNumber: 23
+                    }, this)
+                  ] }, void 0, true, {
+                    fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+                    lineNumber: 78,
+                    columnNumber: 21
+                  }, this)
+                ]
+              },
+              node.label,
+              true,
+              {
+                fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+                lineNumber: 71,
+                columnNumber: 17
+              },
+              this
+            )
+          )
+        ] }, void 0, true, {
+          fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+          lineNumber: 68,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+        lineNumber: 59,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+      lineNumber: 51,
+      columnNumber: 11
+    }, this)
+  ] }, void 0, true, {
+    fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+    lineNumber: 30,
+    columnNumber: 9
+  }, this) }, void 0, false, {
+    fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+    lineNumber: 29,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx",
+    lineNumber: 28,
+    columnNumber: 5
+  }, this);
+}
+_c = TechnologyInfrastructure;
+var _c;
+$RefreshReg$(_c, "TechnologyInfrastructure");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "E:/All DOCS/LIFE_OXI/src/sections/TechnologyInfrastructure.tsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QUFBLGVBZ0JBO0FBQUEsV0F6QkE7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQTBCQTtBQUFBLFNBbENBO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FtQ0E7QUFBQSxPQXhEQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBeURBLEtBMURBO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0EyREEsS0E1REE7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQTZEQTtBQUVBO0FBQUFFLEtBakVBUDtBQUFBLElBQUFPO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbIkNwdSIsIlJhZGlvVG93ZXIiLCJTaGllbGRDaGVjayIsIlNlY3Rpb25IZWFkZXIiLCJpbmZyYXN0cnVjdHVyZU5vZGVzIiwicHJpbmNpcGxlcyIsImljb24iLCJ0aXRsZSIsImNvcHkiLCJUZWNobm9sb2d5SW5mcmFzdHJ1Y3R1cmUiLCJtYXAiLCJwcmluY2lwbGUiLCJub2RlIiwiaW5kZXgiLCJsYWJlbCIsIm1ldGEiLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJUZWNobm9sb2d5SW5mcmFzdHJ1Y3R1cmUudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENwdSwgUmFkaW9Ub3dlciwgU2hpZWxkQ2hlY2sgfSBmcm9tICdsdWNpZGUtcmVhY3QnXG5pbXBvcnQgU2VjdGlvbkhlYWRlciBmcm9tICdAL2NvbXBvbmVudHMvU2VjdGlvbkhlYWRlcidcbmltcG9ydCB7IGluZnJhc3RydWN0dXJlTm9kZXMgfSBmcm9tICdAL2RhdGEvc2l0ZSdcblxuY29uc3QgcHJpbmNpcGxlcyA9IFtcbiAge1xuICAgIGljb246IENwdSxcbiAgICB0aXRsZTogJ1JlZHVuZGFudCBnZW5lcmF0aW9uJyxcbiAgICBjb3B5OlxuICAgICAgJ1BTQSBveHlnZW4gZ2VuZXJhdGlvbiBzaG91bGQgYmUgc3VwcG9ydGVkIGJ5IGEgc2Vjb25kYXJ5IG1hbmlmb2xkIHNvIHBvd2VyIG9yIG1lY2hhbmljYWwgZXZlbnRzIGRvIG5vdCBpbnRlcnJ1cHQgc3VwcGx5LicsXG4gIH0sXG4gIHtcbiAgICBpY29uOiBTaGllbGRDaGVjayxcbiAgICB0aXRsZTogJ1pvbmUtbGV2ZWwgY29udHJvbCcsXG4gICAgY29weTpcbiAgICAgICdBVlNVcyBhdCBJQ1UsIG5lb25hdGFsLCBhbmQgdGhlYXRyZSBlbnRyYW5jZXMgbGV0IHRlYW1zIGlzb2xhdGUgb25lIGNyaXRpY2FsIGFyZWEgd2l0aG91dCBzaHV0dGluZyBkb3duIHRoZSBmYWNpbGl0eS4nLFxuICB9LFxuICB7XG4gICAgaWNvbjogUmFkaW9Ub3dlcixcbiAgICB0aXRsZTogJ0Vhcmx5IGZhdWx0IGRldGVjdGlvbicsXG4gICAgY29weTpcbiAgICAgICdSZWFsLXRpbWUgcHJlc3N1cmUgYW5kIGFsYXJtIG1vbml0b3JpbmcgZ2l2ZXMgdGVjaG5pY2FsIHRlYW1zIHRoZSBpbmZvcm1hdGlvbiB0aGV5IG5lZWQgYmVmb3JlIGNsaW5pY2FsIGRpc3J1cHRpb24uJyxcbiAgfSxcbl1cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gVGVjaG5vbG9neUluZnJhc3RydWN0dXJlKCkge1xuICByZXR1cm4gKFxuICAgIDxzZWN0aW9uIGlkPVwidGVjaG5vbG9neVwiIGNsYXNzTmFtZT1cInJlbGF0aXZlIG92ZXJmbG93LWhpZGRlbiBiZy1pbmstOTUwIHB5LTI0IHNtOnB5LTMyXCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInNlY3Rpb24tc2hlbGxcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdhcC0xMiBsZzpncmlkLWNvbHMtWzAuOWZyXzEuMWZyXSBsZzppdGVtcy1jZW50ZXJcIj5cbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPFNlY3Rpb25IZWFkZXJcbiAgICAgICAgICAgICAgZXllYnJvdz1cIlRlY2hub2xvZ3kgKyBpbmZyYXN0cnVjdHVyZVwiXG4gICAgICAgICAgICAgIHRpdGxlPVwiVGhlIGhvc3BpdGFsJ3Mgb3h5Z2VuIHZhc2N1bGFyIHN5c3RlbSwgbWFkZSB2aXNpYmxlLlwiXG4gICAgICAgICAgICAgIGNvcHk9XCJDZW50cmFsIHN1cHBseSBtb3ZlcyB0aHJvdWdoIG1haW4gcmlzZXJzIGFuZCBicmFuY2ggbGluZXMgYmVmb3JlIHJlYWNoaW5nIEFWU1UtY29udHJvbGxlZCB6b25lcyBhbmQgYmVkc2lkZSBvdXRsZXRzLlwiXG4gICAgICAgICAgICAvPlxuXG4gICAgICAgICAgICA8ZGl2IGRhdGEtcmV2ZWFsIGNsYXNzTmFtZT1cIm10LTEwIGdyaWQgZ2FwLTQgc206Z3JpZC1jb2xzLTMgbGc6Z3JpZC1jb2xzLTFcIj5cbiAgICAgICAgICAgICAge3ByaW5jaXBsZXMubWFwKChwcmluY2lwbGUpID0+IChcbiAgICAgICAgICAgICAgICA8YXJ0aWNsZSBrZXk9e3ByaW5jaXBsZS50aXRsZX0gY2xhc3NOYW1lPVwiZmxleCBnYXAtNCBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGJnLXdoaXRlL1swLjAyNV0gcC01XCI+XG4gICAgICAgICAgICAgICAgICA8cHJpbmNpcGxlLmljb24gY2xhc3NOYW1lPVwibXQtMSBzaHJpbmstMCB0ZXh0LWJyYW5kLTIwMFwiIHNpemU9ezIyfSBzdHJva2VXaWR0aD17MS43fSAvPlxuICAgICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT1cImZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZVwiPntwcmluY2lwbGUudGl0bGV9PC9oMz5cbiAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwibXQtMiB0ZXh0LXNtIGxlYWRpbmctNiB0ZXh0LXNhZ2UtMTAwLzc1XCI+e3ByaW5jaXBsZS5jb3B5fTwvcD5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvYXJ0aWNsZT5cbiAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgIDxkaXYgZGF0YS1yZXZlYWwgY2xhc3NOYW1lPVwicmVsYXRpdmUgbWluLWgtWzM4cmVtXSBvdmVyZmxvdy1oaWRkZW4gYm9yZGVyIGJvcmRlci13aGl0ZS8xMCBiZy13aGl0ZS9bMC4wMjVdIHAtNSBzbTpwLThcIj5cbiAgICAgICAgICAgIDxpbWdcbiAgICAgICAgICAgICAgc3JjPVwiL2ltYWdlcy9mdWxseSBpbnN0YWxsZWQgcGlwZWxpbmUuanBnXCJcbiAgICAgICAgICAgICAgYWx0PVwiXCJcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYWJzb2x1dGUgaW5zZXQtMCBoLWZ1bGwgdy1mdWxsIG9iamVjdC1jb3ZlciBvcGFjaXR5LVswLjE0XVwiXG4gICAgICAgICAgICAgIGxvYWRpbmc9XCJsYXp5XCJcbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgYmctW2xpbmVhci1ncmFkaWVudCgxODBkZWcscmdiYSgxLDgsMTAsMC43MilfMCUscmdiYSgxLDgsMTAsMC44OClfMTAwJSldXCIgLz5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgei0xMCBmbGV4IG1pbi1oLVszNHJlbV0gZmxleC1jb2wganVzdGlmeS1iZXR3ZWVuXCI+XG4gICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1zbSBmb250LXNlbWlib2xkIHVwcGVyY2FzZSB0ZXh0LWJyYW5kLTIwMFwiPkNlbnRyYWxpemVkIG94eWdlbiByb3V0ZTwvcD5cbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJtdC0zIG1heC13LW1kIHRleHQtc20gbGVhZGluZy03IHRleHQtc2FnZS0xMDAvNzVcIj5cbiAgICAgICAgICAgICAgICAgIEdhcy1zcGVjaWZpYyByb3V0aW5nLCBjb2xvci1jb2RlZCBpZGVudGlmaWNhdGlvbiwgYW5kIHByZXNzdXJlLWJhbGFuY2VkXG4gICAgICAgICAgICAgICAgICBicmFuY2hlcyByZWR1Y2UgY3Jvc3MtY29ubmVjdGlvbiByaXNrIGFuZCBzdXBwb3J0IGNvbnNpc3RlbnQgZGVsaXZlcnkuXG4gICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIG10LTggZ3JpZCBnYXAtNFwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYWJzb2x1dGUgbGVmdC01IHRvcC01IGhpZGRlbiBoLVtjYWxjKDEwMCUtMi41cmVtKV0gdy1weCBiZy1icmFuZC0zMDAvMzAgc206YmxvY2tcIiAvPlxuICAgICAgICAgICAgICAgIHtpbmZyYXN0cnVjdHVyZU5vZGVzLm1hcCgobm9kZSwgaW5kZXgpID0+IChcbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAga2V5PXtub2RlLmxhYmVsfVxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJyZWxhdGl2ZSBncmlkIGdhcC00IHJvdW5kZWQtZnVsbCBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGJnLWluay05NTAvODAgcC0zIGJhY2tkcm9wLWJsdXItbWQgc206Z3JpZC1jb2xzLVsyLjc1cmVtXzFmcl1cIlxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJyZWxhdGl2ZSB6LTEwIGdyaWQgaC0xMCB3LTEwIHBsYWNlLWl0ZW1zLWNlbnRlciByb3VuZGVkLWZ1bGwgYmctYnJhbmQtNTAwIGZvbnQtZGlzcGxheSB0ZXh0LXNtIGZvbnQtc2VtaWJvbGQgdGV4dC13aGl0ZVwiPlxuICAgICAgICAgICAgICAgICAgICAgIHtpbmRleCArIDF9XG4gICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibWluLXctMCBweS0xXCI+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmxvY2sgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtd2hpdGVcIj57bm9kZS5sYWJlbH08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmxvY2sgdGV4dC14cyB0ZXh0LXNhZ2UtMzAwXCI+e25vZGUubWV0YX08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvc2VjdGlvbj5cbiAgKVxufVxuIl0sImZpbGUiOiJFOi9BbGwgRE9DUy9MSUZFX09YSS9zcmMvc2VjdGlvbnMvVGVjaG5vbG9neUluZnJhc3RydWN0dXJlLnRzeCJ9
